@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jualeen Affiliator - Penghasilan Tambahan Tanpa Ribet</title>
+    <meta name="description"
+        content="Gabung jadi Affiliator Jualeen. Cari uang tambahan tanpa stok barang, tanpa modal, fleksibel bisa dari mana saja.">
+    <link rel="icon" type="image/png" href="../Images/logo only.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f8ff',
+                            100: '#e0f4fe',
+                            200: '#b9e6fd',
+                            300: '#7cd3fc',
+                            400: '#36bffa',
+                            500: '#258df3', // Warna Utama
+                            600: '#1a7bd6',
+                            700: '#026aa2',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            500: '#6366f1',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 3s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #F0F9FF 0%, #ffffff 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7DD3FC;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #258df3;
+        }
+
+        /* Pattern for light sections */
+        .pattern-dot {
+            background-image: radial-gradient(#E0F2FE 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+
+        /* Hero Slider Transitions (HANYA OPACITY, TANPA TRANSFORM) */
+        .slide-image {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .active-slide {
+            opacity: 1;
+        }
+
+        .inactive-slide {
+            opacity: 0;
+        }
+
+        /* Dynamic Text Animation */
+        .text-change-enter {
+            animation: slideUpFade 0.5s forwards;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 antialiased overflow-x-hidden selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20" id="navbar-container">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer space-x-2"
+                    onclick="window.location.href='../Home/index.html'">
+                    <img src="../Images/logo.png" alt="Jualeen Logo"
+                        class="h-9 md:h-12 w-auto object-contain transition-all duration-300" id="navbar-logo">
+                    <!-- Text (Optional, visible on mobile if needed, usually hidden if logo contains text) -->
+                    <span class="text-2xl font-display font-bold text-brand-500 hidden">Jualeen</span>
+                </div>
+
+                <!-- Desktop Menu (Visual Only) -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../Home/index.html"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200">Home</a>
+                    <a href="javascript:void(0)"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200 cursor-default">Fitur</a>
+                    <a href="../Bisnis/index.html"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200">Bisnis</a>
+                    <a href="javascript:void(0)"
+                        class="text-brand-600 font-bold hover:text-brand-500 transition duration-200 cursor-default">Affiliator</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://app.jualeen.com/login"
+                        class="text-gray-600 hover:text-brand-600 font-semibold transition">Masuk</a>
+                    <a href="https://app.jualeen.com/register"
+                        class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-brand-500/20 transition transform hover:-translate-y-0.5 hover:shadow-xl">
+                        Daftar Gratis
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-brand-500 focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full transition-all duration-300 ease-in-out shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../Home/index.html"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Home</a>
+                <a href="javascript:void(0)"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Fitur</a>
+                <a href="../Bisnis/index.html"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Bisnis</a>
+                <a href="javascript:void(0)"
+                    class="block px-4 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-xl transition">Affiliator</a>
+                <div class="pt-4 flex flex-col space-y-3 px-2">
+                    <a href="https://app.jualeen.com/login"
+                        class="w-full text-center px-4 py-3 border border-gray-200 rounded-xl text-gray-700 font-bold hover:bg-gray-50 transition">Masuk</a>
+                    <a href="https://app.jualeen.com/register"
+                        class="w-full text-center px-4 py-3 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-600 shadow-md transition">Daftar
+                        Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION FIXED -->
+    <!-- 
+        =================================================================================
+        🔥 PANDUAN EDIT TINGGI SECTION (TUTORIAL) 🔥
+        =================================================================================
+        Ingin heronya lebih tinggi? atau lebih pendek?
+        
+        1. Padding Bawah (Jarak antara konten hero dengan section di bawahnya)
+           Cari: `lg:pb-24` di tag <section> di bawah ini.
+           - `lg:pb-10`: Pendek (Rapat).
+           - `lg:pb-24`: Sedang (Standard sekarang).
+           - `lg:pb-32`: Tinggi (Lebih luas).
+           - `lg:pb-40`: Sangat Tinggi (Luas sekali).
+           
+        🔥 PANDUAN PADDING (JARAK) TERPISAH 🔥
+        
+        🔥 UNTUK HP (MOBILE) 🔥
+        Ubah yang TIDAK ADA `lg:` nya.
+        1. JARAK DARI NAVBAR (HEADER):
+           - Cari: `pt-5`
+           - `pt-0`  : Nempel banget ke atas (bisa ketutup navbar).
+           - `pt-5`  : Ada jarak dikit (sekarang).
+           - `pt-20` : Jarak aman (di bawah navbar pas).
+           - Makin KECIL angka = Makin KE ATAS (Mepet Navbar).
+           
+        2. JARAK KE BAWAH:
+           - Cari: `pb-0`
+    -->
+    <section class="relative pt-2 lg:pt-16 pb-0 lg:pb-24 overflow-hidden hero-bg">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 pattern-dot opacity-60 z-0"></div>
+        <div
+            class="absolute top-20 right-0 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float hidden md:block">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Grid dengan items-center agar teks dan gambar sejajar secara vertikal -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
+
+                <!-- Left Column: Text Area -->
+                <!-- PENTING: `order-last md:order-first` artinya di HP dia di BAWAH, di Desktop dia di PERTAMA (Kiri) -->
+                <div class="text-center md:text-left z-20 pb-8 md:pb-0 order-last md:order-first">
+                    <div data-aos="fade-down"
+                        class="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-brand-200 text-brand-600 text-xs md:text-sm font-semibold mb-4 shadow-sm mx-auto md:mx-0 w-fit">
+                        <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+                        Peluang Cuan Terbaru!
+                    </div>
+
+                    <h1 data-aos="fade-up"
+                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-4 leading-[1.1]">
+                        Cuan Sambil <br>
+                        <span class="text-brand-500 block mt-1">
+                            <span id="dynamic-activity" class="inline-block relative z-10">Ngurus Anak</span>
+                        </span>
+                    </h1>
+
+                    <!-- Desktop Text -->
+                    <p data-aos="fade-up" data-aos-delay="200"
+                        class="hidden md:block text-lg text-gray-600 font-medium mb-8 max-w-lg leading-relaxed">
+                        Tanpa stok barang. Tanpa ribet. Tanpa harus jadi influencer.
+                    </p>
+
+                    <!-- Mobile Text (Ringkas) -->
+                    <p data-aos="fade-up" data-aos-delay="200"
+                        class="block md:hidden text-base text-gray-600 font-medium mb-6 leading-relaxed px-4">
+                        Tanpa stok & modal. Cukup modal HP & kuota. <br> Mulai hasilkan uang tambahan sekarang.
+                    </p>
+
+                    <div data-aos="fade-up" data-aos-delay="400"
+                        class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4 px-4 md:px-0">
+                        <a href="https://app.jualeen.com/register"
+                            class="px-6 py-3.5 bg-brand-500 text-white font-bold rounded-xl shadow-lg hover:bg-brand-600 transition-all text-base md:text-lg flex items-center justify-center group transform hover:-translate-y-1">
+                            Daftar Affiliator
+                            <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#how-it-works"
+                            class="hidden md:flex px-8 py-3.5 bg-white text-gray-600 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all text-lg items-center justify-center shadow-sm">
+                            Cara Kerja
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image Slider Area -->
+                <!-- PENTING: `order-first md:order-last` artinya di HP dia di ATAS, di Desktop dia di TERAKHIR (Kanan) -->
+                <div class="relative z-10 mt-0 md:mt-0 order-first md:order-last" data-aos="fade-left">
+                    <!-- Container Gambar dengan Tinggi Fixed yang Besar 
+                         🔥 TUTORIAL TINGGI AREA GAMBAR 🔥
+                         Cari: `md:h-[650px]`
+                         - Ubah angkanya sesuka hati (misal `700px`, `800px`) jika ingin gambar punya ruang lebih banyak.
+                    -->
+                    <div class="relative w-full h-[500px] md:h-[650px] mx-auto flex items-end justify-center">
+
+                        <div id="hero-slider-images" class="w-full h-full relative">
+                            <!-- =============================================== -->
+                            <!--             SECTION GAMBAR HERO                 -->
+                            <!-- =============================================== -->
+                            <!-- 
+                                =================================================================================
+                                🔥 TUTORIAL POSISI MANUAL TAPI AKURAT (MOBILE) 🔥
+                                =================================================================================
+                                Masalah: Setting default seperti `right-10` terlalu loncat (kejauhan).
+                                Solusi: Gunakan "Arbitrary Values" (Nilai Bebas) biar presisi pixel-perfect.
+
+                                CARA PAKAI:
+                                1. Gunakan kurung siku `[...]` untuk nilai spesifik.
+                                   Contoh: `right-[-20px]`, `right-[50px]`, `right-[10%]`.
+                                   
+                                2. CARA GESER:
+                                   - Ingin geser ke KANAN (Keluar layar)? Gunakan angka MINUS.
+                                     Contoh: `right-[-40px]` (Mundur 40px ke kanan).
+                                   - Ingin geser ke KIRI (Masuk layar)? Gunakan angka POSITIF.
+                                     Contoh: `right-[20px]` (Maju 20px ke kiri).
+                                
+                                3. KEUNTUNGAN:
+                                   Bisa diatur pixel demi pixel sampai pas bgt di tengah atau di samping yang dimau.
+                                   
+                                4. Pastikan Reset Desktop tetap ada (`md:...`).
+                            -->
+
+                            <!-- GAMBAR 1: IBU (Contoh: Mundur dikit ke kanan 30px biar ga terlalu tengah) -->
+                            <img src="../Images/happy mother.png" alt="Ibu Mengasuh Anak" class="slide-image active-slide absolute 
+                                    bottom-0 md:bottom-10
+                                    right-[-75px] md:-right-36 lg:-right-28 
+                                    w-auto h-[70%] md:h-[600px]
+                                    scale-[1.1] md:scale-[1] origin-bottom
+                                    max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
+
+                            <!-- GAMBAR 2: MAHASISWA -->
+                            <!-- 
+                                ↕️ CARA NAIK / TURUN (VERTIKAL):
+                                Ubah `top-[50%]`.
+                                - Mau NAIK? Kurangi angkanya. Contoh: `top-[40%]`, `top-[30%]`.
+                                - Mau TURUN? Tambah angkanya. Contoh: `top-[60%]`, `top-[70%]`.
+                                - Class `-translate-y-1/2` JANGAN DIHAPUS (ini biar titik tengah gambar jadi patokan).
+                            -->
+                            <img src="../Images/happy university students.png" alt="Mahasiswa Kuliah"
+                                class="slide-image inactive-slide absolute 
+                                    top-[60%] md:top-1/2
+                                    -translate-y-1/2 md:-translate-y-1/2
+                                    right-[-230px] md:right-4 lg:right-12 
+                                    w-auto h-[95%] md:h-[600px]
+                                    scale-[0.8] md:scale-[1.5] origin-center
+                                    max-w-none md:max-w-full object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
+
+                            <!-- GAMBAR 3: OJOL (Contoh: Mundur agak jauh ke kanan 60px) -->
+                            <img src="../Images/online ride hailing driver happy.png" alt="Ojol Narik" class="slide-image inactive-slide absolute 
+                                    bottom-0 md:bottom-2
+                                    right-[-100px] md:-right-20 lg:-right-40 
+                                    w-auto h-[65%] md:h-[600px]
+                                    scale-[1.3] md:scale-[1.1] origin-bottom
+                                    max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO: Pertanyaan Provokatif -->
+    <section class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-brand-50/50 to-white"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Main Question -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span
+                    class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-brand-50 px-4 py-1.5 rounded-full mb-6 inline-block border border-brand-100">
+                    🤔 Pertanyaan Penting
+                </span>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
+                    Emangnya bisa... <br>
+                    Jualan <span
+                        class="text-brand-500 underline decoration-brand-300 decoration-4 underline-offset-4">tanpa
+                        punya produk atau nyetok?</span>
+                </h2>
+            </div>
+
+            <!-- Provoking Questions Grid -->
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12" data-aos="fade-up" data-aos-delay="100">
+                <!-- Question Card 1 -->
+                <div
+                    class="group bg-gradient-to-br from-brand-50 to-white p-6 md:p-8 rounded-3xl border border-brand-100 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-100/50 transition-all duration-300 hover:-translate-y-1 text-center h-full flex flex-col items-center justify-center">
+                    <div
+                        class="w-16 h-16 bg-brand-500 rounded-full flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-brand-500/30">
+                        <i class="ph-fill ph-address-book"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-snug">Berapa jumlah kontak WhatsApp
+                        atau
+                        followers sosmed kamu?</h3>
+                </div>
+
+                <!-- Question Card 2 -->
+                <div
+                    class="group bg-gradient-to-br from-blue-50 to-white p-6 md:p-8 rounded-3xl border border-blue-100 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300 hover:-translate-y-1 text-center h-full flex flex-col items-center justify-center">
+                    <div
+                        class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">
+                        <i class="ph-fill ph-eye"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-snug">Kalau upload status di sosmed,
+                        ada berapa sih yang lihat?</h3>
+                </div>
+
+                <!-- Question Card 3 -->
+                <div
+                    class="group bg-gradient-to-br from-green-50 to-white p-6 md:p-8 rounded-3xl border border-green-100 hover:border-green-300 hover:shadow-xl hover:shadow-green-100/50 transition-all duration-300 hover:-translate-y-1 text-center h-full flex flex-col items-center justify-center">
+                    <div
+                        class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-green-500/30">
+                        <i class="ph-fill ph-coins"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-snug">Daripada Gabut, Kenapa nggak
+                        di-cuanin aja?</h3>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="#how-it-works"
+                    class="inline-flex items-center text-brand-600 font-bold hover:text-brand-700 transition group text-lg">
+                    Lihat gimana caranya
+                    <i class="ph-bold ph-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS: Cara Kerja Affiliate -->
+    <section id="how-it-works" class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 pattern-dot opacity-40 pointer-events-none"></div>
+
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span
+                    class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-brand-50 px-4 py-1.5 rounded-full mb-6 inline-block border border-brand-100">
+                    ⚙️ Cara Kerja
+                </span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+                    Gimana sih cara kerja <br class="hidden md:block">
+                    <span class="text-brand-500">sistem Affiliate</span> di Jualeen?
+                </h2>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+                <!-- Connector Arrows (Desktop Only) -->
+                <!-- Arrow 1-2 -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[24%] z-20 text-gray-300 text-4xl animate-pulse -translate-y-1/2">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+                <!-- Arrow 2-3 -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[49%] z-20 text-gray-300 text-4xl animate-pulse -translate-y-1/2">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+                <!-- Arrow 3-4 -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[74%] z-20 text-gray-300 text-4xl animate-pulse -translate-y-1/2">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-100/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <!-- Step Number Badge -->
+                    <div
+                        class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/40 group-hover:scale-110 transition-transform z-10">
+                        1
+                    </div>
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-magnifying-glass text-4xl text-brand-500 mb-3 block"></i>
+                            <h3 class="text-xl font-bold text-gray-900 h-14 flex items-center">Cari Produk di Katalog
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Pilih dari <span class="font-semibold text-gray-800">berbagai produk</span> yang sudah
+                            disediakan oleh Partner Bisnis Jualeen. <br>Harga & komisi 100%
+                            <span class="text-brand-600 font-semibold">transparan</span>.</br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-yellow-300 shadow-sm hover:shadow-2xl hover:shadow-yellow-100/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-yellow-500/40 group-hover:scale-110 transition-transform z-10">
+                        2
+                    </div>
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-link text-4xl text-yellow-500 mb-3 block"></i>
+                            <h3 class="text-xl font-bold text-gray-900 h-14 flex items-center">Buat Link Affiliate</h3>
+                        </div>
+                        <p class="text-gray-600 text-base leading-relaxed mb-4">
+                            Sekali klik dapat <span class="font-semibold text-gray-800">link unik</span>. Penjualan
+                            <span class="text-yellow-600 font-semibold">tercatat otomatis</span>.
+                        </p>
+                        <!-- Copy Link Visual -->
+                        <div class="relative group">
+                            <p class="text-[10px] text-gray-400 mb-1 font-semibold uppercase tracking-wider">Link
+                                Affiliate Kamu</p>
+                            <div
+                                class="flex items-center gap-2 p-2 bg-gray-50 rounded-lg border border-gray-200 relative overflow-hidden group-hover:border-yellow-300 transition-colors">
+                                <div
+                                    class="flex-1 bg-white border border-gray-200 rounded px-2 py-1 text-xs text-gray-500 truncate font-mono">
+                                    jualeen.com/aff/z8d9...
+                                </div>
+                                <button
+                                    class="p-1.5 bg-yellow-100 text-yellow-600 rounded hover:bg-yellow-200 transition-colors relative">
+                                    <i class="ph-bold ph-copy"></i>
+                                    <!-- Static Cursor Overlay on Button -->
+                                    <div class="absolute -bottom-2 -right-2 pointer-events-none drop-shadow-sm z-10">
+                                        <i
+                                            class="ph-fill ph-cursor text-gray-800 text-lg transform -rotate-12 bg-white rounded-full border border-gray-100"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-2xl hover:shadow-blue-100/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/40 group-hover:scale-110 transition-transform z-10">
+                        3
+                    </div>
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-share-network text-4xl text-blue-500 mb-3 block"></i>
+                            <h3 class="text-xl font-bold text-gray-900 h-14 flex items-center">Sebar ke Traffic</h3>
+                        </div>
+                        <p class="text-gray-600 text-base leading-relaxed mb-4">
+                            Share link unik ke <span class="font-semibold text-gray-800">sosmed kamu</span>:
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <i class="ph-fill ph-instagram-logo text-pink-600 text-xl"></i>
+                            <i class="ph-fill ph-tiktok-logo text-black text-xl"></i>
+                            <i class="ph-fill ph-whatsapp-logo text-green-600 text-xl"></i>
+                            <i class="ph-fill ph-facebook-logo text-blue-600 text-xl"></i>
+                        </div>
+                        <div class="pt-5 border-t border-gray-100 mt-auto">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-4 border border-gray-200 group-hover:bg-blue-50 group-hover:border-blue-100 transition-colors duration-300">
+                                <p class="text-sm font-bold text-gray-900 mb-1">Butuh Konten Promosi? Tenang..</p>
+                                <p class="text-sm text-gray-600 mb-3">Bisnis akan menyediakannya untuk kamu!</p>
+                                <div class="flex gap-3">
+                                    <div class="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-sm border border-gray-100 text-purple-500"
+                                        title="Foto Produk">
+                                        <i class="ph-duotone ph-image text-xl"></i>
+                                    </div>
+                                    <div class="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-sm border border-gray-100 text-red-500"
+                                        title="Video Promosi">
+                                        <i class="ph-duotone ph-video-camera text-xl"></i>
+                                    </div>
+                                    <div class="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-sm border border-gray-100 text-blue-500"
+                                        title="Copywriting">
+                                        <i class="ph-duotone ph-file-text text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="group relative bg-gradient-to-br from-green-50 to-white p-6 xl:p-8 rounded-3xl border-2 border-green-200 hover:border-green-400 shadow-sm hover:shadow-2xl hover:shadow-green-100/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-green-500/40 group-hover:scale-110 transition-transform z-10">
+                        4
+                    </div>
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-money text-4xl text-green-500 mb-3 block"></i>
+                            <h3 class="text-xl font-bold text-gray-900 h-14 flex items-center">Dapetin Komisi! 🎉</h3>
+                        </div>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Ada transaksi lewat link kamu? Sistem <span
+                                class="font-semibold text-gray-800">auto-detect</span> dan kamu
+                            langsung dapat <span class="text-green-600 font-bold">komisi!</span>
+                        </p>
+                        <div class="mt-4 p-3 bg-white rounded-xl border border-green-100 flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-lg flex-shrink-0">
+                                <i class="ph-fill ph-bell-ringing"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-500">Komisi Masuk:</p>
+                                <p class="text-sm font-bold text-green-600">Rp 50.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://app.jualeen.com/register"
+                    class="inline-flex items-center px-12 py-5 bg-brand-500 text-white font-bold rounded-2xl shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all transform hover:-translate-y-1 text-xl group">
+                    Mulai Jadi Affiliator Sekarang
+                    <i class="ph-bold ph-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <p class="text-gray-500 text-base mt-4">Gratis & tanpa syarat ribet</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON: Old Way vs Jualeen Way -->
+    <section class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span
+                    class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-white px-4 py-1.5 rounded-full mb-6 inline-block border border-gray-200 shadow-sm">
+                    💡 Perbandingan Realistis
+                </span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+                    Kenapa harus <span class="text-red-500 decoration-wavy underline decoration-red-200">ribet</span>
+                    <br class="hidden md:block">
+                    kalau bisa <span class="text-green-500">simple?</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Coba deh bandingkan kalau kamu mau jualan produk sendiri vs jadi Affiliator di Jualeen.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <!-- Old Way Card -->
+                <div class="bg-white p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm relative overflow-hidden group hover:border-red-200 transition-colors"
+                    data-aos="fade-right">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gray-200 group-hover:bg-red-200 transition-colors">
+                    </div>
+
+                    <div class="flex items-center mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
+                        <i class="ph-duotone ph-storefront text-4xl text-gray-400 mr-4 group-hover:text-red-400"></i>
+                        <h3 class="text-2xl font-bold text-gray-500 group-hover:text-red-500">Jualan Biasa</h3>
+                    </div>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start text-gray-500 group-hover:text-gray-600 transition-colors">
+                            <i class="ph-bold ph-x-circle text-red-400 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-700 font-bold mb-1">Butuh Modal Gede</strong>
+                                <span class="text-sm">Harus beli stok, sewa tempat, atau biaya produksi.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start text-gray-500 group-hover:text-gray-600 transition-colors">
+                            <i class="ph-bold ph-x-circle text-red-400 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-700 font-bold mb-1">Pusing Packing & Kirim</strong>
+                                <span class="text-sm">Tiap hari ribet bungkus paket dan lari ke ekspedisi.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start text-gray-500 group-hover:text-gray-600 transition-colors">
+                            <i class="ph-bold ph-x-circle text-red-400 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-700 font-bold mb-1">Resiko Stok Mati</strong>
+                                <span class="text-sm">Barang gak laku? Rugi bandar ditanggung sendiri.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Jualeen Way Card -->
+                <div class="bg-white p-8 md:p-10 rounded-3xl border-2 border-brand-500 shadow-xl shadow-brand-500/10 relative overflow-hidden transform md:-translate-y-4"
+                    data-aos="fade-left">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Recommended</div>
+
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 text-2xl mr-4 shadow-sm">
+                            <i class="ph-fill ph-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Affiliate di Jualeen</h3>
+                    </div>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-900 font-bold mb-1">Modal 0 Rupiah</strong>
+                                <span class="text-sm text-gray-600">Cuma butuh HP, Kuota, dan kemauan. Gratis
+                                    daftar.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-900 font-bold mb-1">Terima Beres</strong>
+                                <span class="text-sm text-gray-600">Packing? Pengiriman? Komplain? Bisnis yang urus.
+                                    Kamu duduk manis.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl mr-3 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-gray-900 font-bold mb-1">Tanpa Resiko</strong>
+                                <span class="text-sm text-gray-600">Gak laku? Santai, kamu gak rugi sepeser pun.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-6 border-t border-gray-100 text-center">
+                        <p class="text-brand-600 font-medium text-sm mb-4">✨ Pilihan cerdas buat yang mau cuan praktis
+                        </p>
+                        <a href="https://app.jualeen.com/register"
+                            class="block w-full py-3 bg-brand-500 text-white font-bold rounded-xl hover:bg-brand-600 transition shadow-lg shadow-brand-500/20">
+                            Daftar Gratis Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE SPOTLIGHT: Transparansi -->
+    <section class="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+        <div
+            class="absolute right-0 top-1/4 w-1/3 h-2/3 bg-gradient-to-l from-brand-50 to-transparent rounded-l-full opacity-50 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div data-aos="fade-right">
+                    <div
+                        class="mb-6 inline-flex items-center px-3 py-1 rounded-lg bg-green-50 text-green-700 text-sm font-semibold border border-green-100">
+                        <i class="ph-fill ph-shield-check mr-2"></i> 100% Transparan
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
+                        Pantau Cuannya <br>
+                        <span class="text-brand-500">Real-Time.</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Kami paham, kepercayaan itu mahal. Makanya di Jualeen, kamu punya akses ke dashboard canggih
+                        yang mencatat setiap klik dan rupiah yang masuk detik itu juga.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-500 shadow-sm border border-gray-200 mr-4">
+                                <i class="ph-bold ph-chart-line-up"></i>
+                            </div>
+                            <span class="font-medium text-gray-900">Laporan performa link akurat</span>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-500 shadow-sm border border-gray-200 mr-4">
+                                <i class="ph-bold ph-wallet"></i>
+                            </div>
+                            <span class="font-medium text-gray-900">Penarikan komisi yang mudah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Content (Abstract Dashboard UI) -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="relative bg-white p-6 rounded-3xl shadow-2xl border border-gray-200">
+                        <!-- Header Mockup -->
+                        <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <div class="text-xs text-brand-500 font-bold px-2 py-1 bg-brand-50 rounded-md">Live Income
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="p-4 bg-gray-50 rounded-2xl">
+                                <p class="text-xs text-gray-500 mb-1">Total Klik</p>
+                                <p class="text-2xl font-bold text-gray-900">1,240 <span
+                                        class="text-xs text-green-500 translate-y-[-2px] inline-block font-normal">▲
+                                        12%</span></p>
+                            </div>
+                            <div class="p-4 bg-brand-500 text-white rounded-2xl shadow-lg shadow-brand-500/20">
+                                <p class="text-xs text-brand-200 mb-1">Total Komisi</p>
+                                <p class="text-2xl font-bold">Rp 2.5jt <span
+                                        class="text-xs text-white/80 translate-y-[-2px] inline-block font-normal">▲
+                                        New!</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Graph Placeholder -->
+                        <div
+                            class="h-32 bg-gray-50 rounded-2xl flex items-end justify-between px-4 pb-2 pt-8 gap-2 border border-gray-100">
+                            <div
+                                class="w-full bg-brand-100 rounded-t-sm h-[30%] relative group cursor-pointer hover:bg-brand-300 transition-colors">
+                            </div>
+                            <div
+                                class="w-full bg-brand-100 rounded-t-sm h-[50%] relative group cursor-pointer hover:bg-brand-300 transition-colors">
+                            </div>
+                            <div
+                                class="w-full bg-brand-100 rounded-t-sm h-[40%] relative group cursor-pointer hover:bg-brand-300 transition-colors">
+                            </div>
+                            <div
+                                class="w-full bg-brand-200 rounded-t-sm h-[70%] relative group cursor-pointer hover:bg-brand-400 transition-colors">
+                            </div>
+                            <div
+                                class="w-full bg-brand-100 rounded-t-sm h-[60%] relative group cursor-pointer hover:bg-brand-300 transition-colors">
+                            </div>
+                            <div
+                                class="w-full bg-brand-500 rounded-t-sm h-[85%] relative group cursor-pointer shadow-lg shadow-brand-500/30">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center animate-float"
+                        style="animation-delay: 1s;">
+                        <div
+                            class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mr-3">
+                            <i class="ph-fill ph-money"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500">Baru Saja Cair</p>
+                            <p class="font-bold text-gray-900">+Rp 150.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Dynamic Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 z-0"></div>
+
+        <!-- Animated Background Glows -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-brand-400 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 animate-pulse">
+            </div>
+            <div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 animate-pulse"
+                style="animation-delay: 2s"></div>
+        </div>
+
+        <!-- Floating Decorative Icons -->
+        <div
+            class="absolute top-10 left-4 lg:left-20 text-white/5 text-8xl lg:text-9xl animate-float hidden md:block select-none">
+            <i class="ph-fill ph-rocket-launch"></i>
+        </div>
+        <div class="absolute bottom-10 right-4 lg:right-20 text-white/5 text-8xl lg:text-9xl animate-float hidden md:block select-none"
+            style="animation-delay: 3s">
+            <i class="ph-fill ph-coins"></i>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <div data-aos="fade-up">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-brand-100 text-sm font-semibold mb-6 backdrop-blur-sm">
+                    🚀 Mulai Hari Ini
+                </span>
+                <h2
+                    class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight drop-shadow-sm">
+                    Mulai Jadi
+                    <span class="relative inline-block text-yellow-300">
+                        Affiliator
+                        <svg class="absolute w-full h-3 -bottom-2 left-0 text-yellow-300/50" viewBox="0 0 100 10"
+                            preserveAspectRatio="none">
+                            <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="none" />
+                        </svg>
+                    </span>
+                </h2>
+                <p
+                    class="text-brand-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium leading-relaxed opacity-90">
+                    Gratis. Tanpa kontrak. Tanpa modal. Cobain aja dulu.
+                </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200"
+                class="flex flex-col sm:flex-row justify-center gap-5 items-center">
+                <!-- Primary Button with Glow Effect -->
+                <a href="https://app.jualeen.com/register"
+                    class="group relative px-10 py-4 bg-white text-brand-700 font-bold rounded-xl shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.6)] transition-all transform hover:-translate-y-1 overflow-hidden">
+                    <span class="relative z-10 flex items-center">
+                        Daftar Gratis Sekarang <i
+                            class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+                <!-- Brand Column -->
+                <div class="col-span-2 lg:col-span-2 pr-8">
+                    <div class="flex items-center mb-6">
+                        <!-- Footer Logo -->
+                        <img src="../Images/logo.png" alt="Jualeen Logo" class="h-10 w-auto object-contain"
+                            onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden')">
+                        <span class="ml-2 text-2xl font-display font-bold text-gray-800 md:hidden">Jualeen</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-8 max-w-sm leading-relaxed">
+                        Platform affiliate hub Indonesia terdepan. Kami menghubungkan bisnis potensial dengan
+                        affiliator handal untuk scale bisnis tanpa batas.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-instagram-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-facebook-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Produk</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Fitur
+                                Utama</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Harga &
+                                Paket</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">AI
+                                Builder</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Integrasi API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Resources</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Dokumentasi</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Blog
+                                Tips</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Pusat
+                                Bantuan</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Komunitas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Perusahaan</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Tentang
+                                Kami</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Karir</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Kontak</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 Jualeen. Hak cipta dilindungi.</p>
+                <div
+                    class="flex items-center mt-4 md:mt-0 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                    <span class="flex items-center">Made with <i class="ph-fill ph-heart text-red-500 mx-1"></i> in
+                        Yogyakarta, Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Init AOS
+            AOS.init({
+                once: true,
+                offset: 50,
+                duration: 800,
+                easing: 'ease-out-cubic',
+            });
+
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+
+                    // Toggle Icon
+                    const icon = btn.querySelector('i');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.remove('ph-x');
+                        icon.classList.add('ph-list');
+                    } else {
+                        icon.classList.remove('ph-list');
+                        icon.classList.add('ph-x');
+                    }
+                });
+            }
+
+            // Sticky Navbar Effect
+            const navbar = document.getElementById('navbar');
+            const navContainer = document.getElementById('navbar-container');
+            const navLogo = document.getElementById('navbar-logo');
+
+            if (navbar && navContainer && navLogo) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 10) {
+                        navbar.classList.add('shadow-md');
+                        navContainer.classList.replace('h-20', 'h-16');
+                        navLogo.classList.replace('md:h-12', 'md:h-10');
+                        navLogo.classList.replace('h-9', 'h-8');
+                    } else {
+                        navbar.classList.remove('shadow-md');
+                        navContainer.classList.replace('h-16', 'h-20');
+                        navLogo.classList.replace('md:h-10', 'md:h-12');
+                        navLogo.classList.replace('h-8', 'h-9');
+                    }
+                });
+            }
+
+            // --- HERO SLIDER LOGIC ---
+            const slides = [
+                { text: "Ngurus Anak" },
+                { text: "Kuliah" },
+                { text: "Narik" }
+            ];
+
+            const images = document.querySelectorAll('.slide-image');
+            const dots = document.querySelectorAll('.slider-dot'); // Might be empty
+            const dynamicText = document.getElementById('dynamic-activity');
+            let currentIndex = 0;
+            const intervalTime = 3000; // 3 seconds per slide
+
+            function changeSlide(index) {
+                // Remove active class from all images
+                if (images.length > 0) {
+                    images.forEach(img => {
+                        img.classList.remove('active-slide');
+                        img.classList.add('inactive-slide');
+                    });
+
+                    // Set active image
+                    if (images[index]) {
+                        images[index].classList.remove('inactive-slide');
+                        images[index].classList.add('active-slide');
+                    }
+                }
+
+                // Reset dots (only if dots exist)
+                if (dots.length > 0) {
+                    dots.forEach(dot => {
+                        dot.classList.remove('bg-brand-500', 'w-8');
+                        dot.classList.add('bg-brand-200', 'w-2');
+                    });
+
+                    if (dots[index]) {
+                        dots[index].classList.remove('bg-brand-200', 'w-2');
+                        dots[index].classList.add('bg-brand-500', 'w-8');
+                    }
+                }
+
+                // Animate Text Change
+                if (dynamicText) {
+                    dynamicText.classList.remove('text-change-enter');
+                    void dynamicText.offsetWidth; // Trigger reflow
+                    dynamicText.textContent = slides[index].text;
+                    dynamicText.classList.add('text-change-enter');
+                }
+
+                currentIndex = index;
+            }
+
+            // Auto Cycle
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % slides.length;
+                changeSlide(nextIndex);
+            }, intervalTime);
+
+            // Click on dots (only if dots exist)
+            if (dots.length > 0) {
+                dots.forEach((dot, idx) => {
+                    dot.addEventListener('click', () => {
+                        changeSlide(idx);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
