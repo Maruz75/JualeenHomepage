@@ -13,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
     <!-- Google Fonts -->
     <link
@@ -127,6 +127,34 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Custom Animation System (Replaces AOS) */
+        [data-animate] {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        [data-animate="fade-up"] {
+            transform: translateY(30px);
+        }
+
+        [data-animate="fade-down"] {
+            transform: translateY(-30px);
+        }
+
+        [data-animate="fade-right"] {
+            transform: translateX(-30px);
+        }
+
+        [data-animate="fade-left"] {
+            transform: translateX(30px);
+        }
+
+        [data-animate].animate-visible {
+            opacity: 1;
+            transform: translate(0, 0);
         }
     </style>
 </head>
@@ -243,13 +271,13 @@
                 <!-- Left Column: Text Area -->
                 <!-- PENTING: `order-last md:order-first` artinya di HP dia di BAWAH, di Desktop dia di PERTAMA (Kiri) -->
                 <div class="text-center md:text-left z-20 pb-8 md:pb-0 order-last md:order-first">
-                    <div data-aos="fade-down"
+                    <div data-animate="fade-down"
                         class="inline-flex items-center px-4 py-1.5 md:px-5 md:py-2 rounded-full bg-white border border-brand-200 text-brand-600 text-sm md:text-base font-semibold mb-6 shadow-sm mx-auto md:mx-0 w-fit">
                         <span class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-green-400 mr-2.5 animate-pulse"></span>
                         Peluang Cuan Terbaru!
                     </div>
 
-                    <h1 data-aos="fade-up"
+                    <h1 data-animate="fade-up"
                         class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-4 leading-[1.1]">
                         Cuan Sambil <br>
                         <span class="text-brand-500 block mt-1">
@@ -258,19 +286,19 @@
                     </h1>
 
                     <!-- Desktop Text -->
-                    <p data-aos="fade-up" data-aos-delay="200"
+                    <p data-animate="fade-up" data-aos-delay="200"
                         class="hidden md:block text-lg text-gray-600 font-medium mb-8 max-w-lg leading-relaxed">
                         Cara baru berjualan! <br>Tanpa stok barang. Tanpa modal. Tanpa ribet.
                         </br>
                     </p>
 
                     <!-- Mobile Text (Ringkas) -->
-                    <p data-aos="fade-up" data-aos-delay="200"
+                    <p data-animate="fade-up" data-aos-delay="200"
                         class="block md:hidden text-base text-gray-600 font-medium mb-6 leading-relaxed px-4">
-                        Tanpa stok & modal. Cukup modal HP & kuota. <br> Mulai hasilkan uang tambahan sekarang.
+                        <br>Cara baru berjualan!<br /> Tanpa stok barang. Tanpa Modal. <br> Tanpa Modal. Tanpa ribet.
                     </p>
 
-                    <div data-aos="fade-up" data-aos-delay="400"
+                    <div data-animate="fade-up" data-aos-delay="400"
                         class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4 px-4 md:px-0">
                         <a href="https://app.jualeen.com/register"
                             class="px-6 py-3.5 bg-brand-500 text-white font-bold rounded-xl shadow-lg hover:bg-brand-600 transition-all text-base md:text-lg flex items-center justify-center group transform hover:-translate-y-1">
@@ -286,7 +314,7 @@
 
                 <!-- Right Column: Image Slider Area -->
                 <!-- PENTING: `order-first md:order-last` artinya di HP dia di ATAS, di Desktop dia di TERAKHIR (Kanan) -->
-                <div class="relative z-10 mt-0 md:mt-0 order-first md:order-last" data-aos="fade-left">
+                <div class="relative z-10 mt-0 md:mt-0 order-first md:order-last" data-animate="fade-left">
                     <!-- Container Gambar dengan Tinggi Fixed yang Besar 
                          🔥 TUTORIAL TINGGI AREA GAMBAR 🔥
                          Cari: `md:h-[650px]`
@@ -350,7 +378,7 @@
                             <img src="../Images/online ride hailing driver happy.webp" alt="Ojol Narik" loading="lazy"
                                 class="slide-image inactive-slide absolute 
                                     bottom-0 md:bottom-2
-                                    right-[-110px] md:-right-20 lg:-right-40 
+                                    right-[-105px] md:-right-20 lg:-right-40 
                                     w-auto h-[65%] md:h-[600px]
                                     scale-[1.3] md:scale-[1.1] origin-bottom
                                     max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
@@ -363,12 +391,12 @@
     </section>
 
     <!-- INTRO: Pertanyaan Provokatif -->
-    <section class="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section class="py-20 md:py-28 bg-white relative overflow-hidden md:[zoom:0.85] lg:[zoom:0.75]">
         <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-brand-50/50 to-white"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
             <!-- Main Question -->
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-16" data-animate="fade-up" data-aos-offset="0">
                 <span
                     class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-brand-50 px-4 py-1.5 rounded-full mb-6 inline-block border border-brand-100">
                     🤔 Pertanyaan
@@ -383,7 +411,8 @@
             </div>
 
             <!-- Provoking Questions Grid -->
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12" data-animate="fade-up" data-aos-delay="100"
+                data-aos-offset="0">
                 <!-- Question Card 1 -->
                 <div
                     class="group bg-gradient-to-br from-brand-50 to-white p-6 md:p-8 rounded-3xl border border-brand-100 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-100/50 transition-all duration-300 hover:-translate-y-1 text-center h-full flex flex-col items-center justify-center">
@@ -421,7 +450,7 @@
             </div>
 
             <!-- CTA -->
-            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center" data-animate="fade-up" data-aos-delay="200">
                 <a href="#how-it-works"
                     class="inline-flex items-center text-brand-600 font-bold hover:text-brand-700 transition group text-lg">
                     Lihat gimana caranya
@@ -432,14 +461,75 @@
         </div>
     </section>
 
+    <!-- INTRO JUALEEN -->
+    <!-- INTRO JUALEEN -->
+    <section
+        class="py-24 bg-gradient-to-br from-brand-50/50 via-white to-brand-50/50 relative overflow-hidden md:[zoom:0.85] lg:[zoom:0.75]">
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 opacity-30 pattern-grid pointer-events-none"></div>
+        <div
+            class="absolute -top-24 -right-24 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+        </div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"
+            style="animation-delay: 2s"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Header -->
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-100 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span class="text-xs md:text-sm font-bold text-gray-700 uppercase tracking-wide">Platform Affiliate
+                        Hub Karya Anak Bangsa 🇮🇩</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-8 leading-tight">
+                    Kini Hadir <br class="md:hidden">
+                    <img src="../Images/logo.png" alt="Jualeen"
+                        class="h-10 md:h-16 inline-block object-contain align-middle -mt-1 md:-mt-2">
+                </h2>
+
+                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light mb-12">
+                    <span class="font-bold text-gray-900">Jualeen</span> adalah jembatan yang menghubungkan
+                    <span class="text-brand-600 font-semibold bg-brand-50 px-2 rounded">Kamu (Affiliator)</span>
+                    dengan
+                    <span class="text-brand-600 font-semibold bg-brand-50 px-2 rounded">Bisnis Lokal Pilihan</span>.
+                </p>
+
+                <!-- Partnership Illustration -->
+                <div
+                    class="relative w-full max-w-2xl md:max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-brand-100/50 border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="../Images/Partnership Illustration.png" alt="Partnership Illustration"
+                        class="w-full h-auto object-cover">
+                    <!-- Shine Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center" data-animate="fade-up" data-aos-delay="400" data-aos-offset="0">
+                <p class="text-gray-1000 font-medium italic mb-6">Penasaran gimana alurnya? Yuk, intip cara mainnya!</p>
+                <a href="#how-it-works"
+                    class="group inline-flex items-center justify-center w-14 h-14 rounded-full bg-white border border-brand-100 shadow-lg shadow-brand-100/50 text-brand-500 hover:text-white hover:bg-brand-500 hover:scale-110 transition-all duration-300 animate-bounce">
+                    <i class="ph-bold ph-arrow-down text-xl group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- HOW IT WORKS: Cara Kerja Affiliate -->
-    <section id="how-it-works" class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="how-it-works"
+        class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden md:[zoom:0.85] lg:[zoom:0.75]">
         <!-- Background Pattern -->
         <div class="absolute inset-0 pattern-dot opacity-40 pointer-events-none"></div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-16" data-animate="fade-up" data-aos-offset="0">
                 <span
                     class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-brand-50 px-4 py-1.5 rounded-full mb-6 inline-block border border-brand-100">
                     ⚙️ Cara Kerja
@@ -472,7 +562,7 @@
 
                 <!-- Step 1 -->
                 <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-100/30 transition-all duration-300 h-full flex flex-col"
-                    data-aos="fade-up" data-aos-delay="0">
+                    data-animate="fade-up" data-aos-delay="0" data-aos-offset="0">
                     <!-- Step Number Badge -->
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/40 group-hover:scale-110 transition-transform z-10">
@@ -567,7 +657,7 @@
 
                 <!-- Step 2 -->
                 <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-yellow-300 shadow-sm hover:shadow-2xl hover:shadow-yellow-100/30 transition-all duration-300 h-full flex flex-col"
-                    data-aos="fade-up" data-aos-delay="100">
+                    data-animate="fade-up" data-aos-delay="100" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-yellow-500/40 group-hover:scale-110 transition-transform z-10">
                         2
@@ -609,7 +699,7 @@
 
                 <!-- Step 3 -->
                 <div class="group relative bg-white p-6 xl:p-8 rounded-3xl border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-2xl hover:shadow-blue-100/30 transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
+                    data-animate="fade-up" data-aos-delay="200" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/40 group-hover:scale-110 transition-transform z-10">
                         3
@@ -657,7 +747,7 @@
 
                 <!-- Step 4 -->
                 <div class="group relative bg-gradient-to-br from-green-50 to-white p-6 xl:p-8 rounded-3xl border-2 border-green-200 hover:border-green-400 shadow-sm hover:shadow-2xl hover:shadow-green-100/30 transition-all duration-300 h-full flex flex-col"
-                    data-aos="fade-up" data-aos-delay="300">
+                    data-animate="fade-up" data-aos-delay="300" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-green-500/40 group-hover:scale-110 transition-transform z-10">
                         4
@@ -746,7 +836,7 @@
             </div>
 
             <!-- CTA Button -->
-            <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="400">
+            <div class="text-center mt-20" data-animate="fade-up" data-aos-delay="400" data-aos-offset="0">
                 <a href="https://app.jualeen.com/register"
                     class="inline-flex items-center px-12 py-5 bg-brand-500 text-white font-bold rounded-2xl shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all transform hover:-translate-y-1 text-xl group">
                     Mulai Jadi Affiliator Sekarang
@@ -758,16 +848,16 @@
     </section>
 
     <!-- COMPARISON: Old Way vs Jualeen Way -->
-    <section class="py-24 bg-gray-50 relative overflow-hidden">
+    <section class="py-24 bg-gray-50 relative overflow-hidden md:[zoom:0.85] lg:[zoom:0.75]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-16" data-animate="fade-up" data-aos-offset="0">
                 <span
                     class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-white px-4 py-1.5 rounded-full mb-6 inline-block border border-gray-200 shadow-sm">
                     💡 Perbandingan Realistis
                 </span>
                 <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">
                     Kalau bisa <span class="text-green-500">simple</span>
-                    <br class="hidden md:block">
+                    <br>
                     Kenapa harus <span class="text-red-500 decoration-wavy underline decoration-red-200">ribet?</span>
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -778,7 +868,7 @@
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
                 <!-- Old Way Card -->
                 <div class="bg-white p-8 md:p-10 rounded-3xl border border-red-200 shadow-sm relative overflow-hidden group transition-colors"
-                    data-aos="fade-right">
+                    data-animate="fade-right" data-aos-offset="0">
                     <div class="absolute top-0 left-0 w-full h-2 bg-red-200 transition-colors">
                     </div>
 
@@ -798,14 +888,15 @@
                         <li class="flex items-start text-gray-500 group-hover:text-gray-600 transition-colors">
                             <i class="ph-bold ph-x-circle text-red-400 text-xl mr-3 mt-0.5"></i>
                             <div>
-                                <strong class="block text-gray-700 font-bold mb-1">Pusing Packing & Kirim</strong>
+                                <strong class="block text-gray-700 font-bold mb-1">Pusing Mikirin Packing &
+                                    Kirim</strong>
                                 <span class="text-sm">Tiap hari ribet bungkus paket dan lari ke ekspedisi.</span>
                             </div>
                         </li>
                         <li class="flex items-start text-gray-500 group-hover:text-gray-600 transition-colors">
                             <i class="ph-bold ph-x-circle text-red-400 text-xl mr-3 mt-0.5"></i>
                             <div>
-                                <strong class="block text-gray-700 font-bold mb-1">Resiko Stok Mati</strong>
+                                <strong class="block text-gray-700 font-bold mb-1">Resiko Stok Nggak Laku</strong>
                                 <span class="text-sm">Barang gak laku? Rugi bandar ditanggung sendiri.</span>
                             </div>
                         </li>
@@ -814,7 +905,7 @@
 
                 <!-- Jualeen Way Card -->
                 <div class="bg-white p-8 md:p-10 rounded-3xl border-2 border-brand-500 shadow-xl shadow-brand-500/10 relative overflow-hidden transform md:-translate-y-4"
-                    data-aos="fade-left">
+                    data-animate="fade-left" data-aos-offset="0">
                     <div
                         class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                         Recommended</div>
@@ -867,7 +958,7 @@
     </section>
 
     <!-- FEATURE SPOTLIGHT: Transparansi -->
-    <section class="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+    <section class="py-24 bg-white border-t border-gray-100 relative md:[zoom:0.85] lg:[zoom:0.75]">
         <div
             class="absolute right-0 top-1/4 w-1/3 h-2/3 bg-gradient-to-l from-brand-50 to-transparent rounded-l-full opacity-50 pointer-events-none">
         </div>
@@ -875,7 +966,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Text Content -->
-                <div data-aos="fade-right">
+                <div data-animate="fade-right" data-aos-offset="0">
                     <div
                         class="mb-6 inline-flex items-center px-3 py-1 rounded-lg bg-green-50 text-green-700 text-sm font-semibold border border-green-100">
                         <i class="ph-fill ph-shield-check mr-2"></i> 100% Transparan
@@ -885,7 +976,8 @@
                         <span class="text-brand-500">Real-Time.</span>
                     </h2>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Kami paham, kepercayaan itu mahal. Makanya di Jualeen, kamu punya akses ke dashboard canggih
+                        <br>Kami paham, kepercayaan itu mahal.</br> Makanya di Jualeen, kamu punya akses ke dashboard
+                        canggih
                         yang mencatat setiap klik dan rupiah yang masuk detik itu juga.
                     </p>
 
@@ -910,7 +1002,7 @@
                 </div>
 
                 <!-- Visual Content (Abstract Dashboard UI) -->
-                <div class="relative" data-aos="fade-left">
+                <div class="relative" data-animate="fade-left" data-aos-offset="0">
                     <div class="relative bg-white p-6 rounded-3xl shadow-2xl border border-gray-200">
                         <!-- Header Mockup -->
                         <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
@@ -981,7 +1073,7 @@
     </section>
 
     <!-- CTA BANNER -->
-    <section class="py-24 relative overflow-hidden">
+    <section class="py-24 relative md:[zoom:0.85] lg:[zoom:0.75]">
         <!-- Dynamic Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 z-0"></div>
 
@@ -1005,7 +1097,7 @@
         </div>
 
         <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-            <div data-aos="fade-up">
+            <div data-animate="fade-up" data-aos-offset="0">
                 <span
                     class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-brand-100 text-sm font-semibold mb-6 backdrop-blur-sm">
                     🚀 Mulai Hari Ini
@@ -1027,8 +1119,8 @@
                 </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="200"
-                class="flex flex-col sm:flex-row justify-center gap-5 items-center">
+            <div class="flex flex-col sm:flex-row justify-center gap-5 items-center" data-animate="fade-up"
+                data-aos-delay="200" data-aos-offset="0">
                 <!-- Primary Button with Glow Effect -->
                 <a href="https://app.jualeen.com/register"
                     class="group relative px-10 py-4 bg-white text-brand-700 font-bold rounded-xl shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.6)] transition-all transform hover:-translate-y-1 overflow-hidden">
@@ -1045,7 +1137,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10">
+    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10 md:[zoom:0.85] lg:[zoom:0.75]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
                 <!-- Brand Column -->
@@ -1136,15 +1228,58 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        /* Custom Animation Rules */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        [data-animate="fade-up"] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        [data-animate].animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Init AOS
-            AOS.init({
-                once: true,
-                offset: 50,
-                duration: 800,
-                easing: 'ease-out-cubic',
+            // Custom Animation System (IntersectionObserver)
+            // Fixes visibility issues caused by CSS zoom on desktop
+
+            // Config: Offset trigger point from bottom to ensure element is actually visible
+            // "Turunkan titik animasi" = Negative bottom margin (Trigger line moves UP from bottom)
+            const isDesktop = window.innerWidth >= 768;
+            const bottomMargin = isDesktop ? '-100px' : '-50px';
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: `0px 0px ${bottomMargin} 0px`,
+                threshold: 0.15 // Trigger when 15% visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                // Handle delay via inline style if attribute exists
+                const delay = el.getAttribute('data-aos-delay'); // Changed from data-animate-delay to data-aos-delay to match existing HTML
+                if (delay) {
+                    el.style.transitionDelay = `${delay}ms`;
+                }
+                observer.observe(el);
             });
 
             // Mobile Menu
