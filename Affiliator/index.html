@@ -278,7 +278,7 @@
                     </div>
 
                     <h1 data-animate="fade-up"
-                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-4 leading-[1.1]">
+                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-[1px] md:mb-[50px] leading-[1.1]">
                         Cuan Sambil <br>
                         <span class="text-brand-500 block mt-1">
                             <span id="dynamic-activity" class="inline-block relative z-10">Ngurus Anak</span>
@@ -287,15 +287,15 @@
 
                     <!-- Desktop Text -->
                     <p data-animate="fade-up" data-aos-delay="200"
-                        class="hidden md:block text-lg text-gray-600 font-medium mb-8 max-w-lg leading-relaxed">
-                        Cara baru berjualan! <br>Tanpa stok barang. Tanpa modal. Tanpa ribet.
+                        class="hidden md:block text-[24px] text-gray-600 font-medium mb-12 max-w-lg leading-relaxed">
+                        Cara baru berjualan! <br>Tanpa Stok Barang. Tanpa Modal. <br> Tanpa Ribet. </br>
                         </br>
                     </p>
 
-                    <!-- Mobile Text (Ringkas) -->
+                    <!-- Mobile Text (Ringkas)-->
                     <p data-animate="fade-up" data-aos-delay="200"
-                        class="block md:hidden text-base text-gray-600 font-medium mb-6 leading-relaxed px-4">
-                        <br>Cara baru berjualan!<br /> Tanpa stok barang. Tanpa Modal. <br> Tanpa Modal. Tanpa ribet.
+                        class="block md:hidden text-[20px] text-gray-600 font-medium mb-6 leading-relaxed px-4">
+                        <br>Cara baru berjualan!<br /> Tanpa Produk. Tanpa Stok Barang. Tanpa Modal. Tanpa Ribet.
                     </p>
 
                     <div data-animate="fade-up" data-aos-delay="400"
@@ -1281,6 +1281,15 @@
                 }
                 observer.observe(el);
             });
+
+            // Force Hero animations to trigger immediately (ignoring scroll position)
+            setTimeout(() => {
+                document.querySelectorAll('.hero-bg [data-animate]').forEach(el => {
+                    el.classList.add('animate-visible');
+                    // Stop observing since we triggered it manually
+                    observer.unobserve(el);
+                });
+            }, 100);
 
             // Mobile Menu
             const btn = document.getElementById('mobile-menu-btn');
