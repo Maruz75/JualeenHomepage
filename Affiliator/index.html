@@ -31,6 +31,9 @@
                         sans: ['Inter', 'sans-serif'],
                         display: ['Quicksand', 'sans-serif'],
                     },
+                    screens: {
+                        'xs': { 'max': '380px' }, // Preset khusus HP Kecil (360px)
+                    },
                     colors: {
                         brand: {
                             50: '#f0f8ff',
@@ -257,7 +260,18 @@
         2. JARAK KE BAWAH:
            - Cari: `pb-0`
     -->
-    <section class="relative pt-2 lg:pt-16 pb-0 lg:pb-24 overflow-hidden hero-bg">
+    <style>
+        @media (max-width: 400px) {
+            #hero-section {
+                padding-top: 0px !important;
+            }
+
+            #hero-image-container {
+                margin-top: -90px !important;
+            }
+        }
+    </style>
+    <section id="hero-section" class="relative pt-2 lg:pt-16 pb-0 lg:pb-24 overflow-hidden hero-bg">
         <!-- Background Decorations -->
         <div class="absolute inset-0 pattern-dot opacity-60 z-0"></div>
         <div
@@ -278,7 +292,7 @@
                     </div>
 
                     <h1 data-animate="fade-up"
-                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-[1px] md:mb-[50px] leading-[1.1]">
+                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-[30px] xs:mb-[15px] md:mb-[50px] leading-[1.1]">
                         Cuan Sambil <br>
                         <span class="text-brand-500 block mt-1">
                             <span id="dynamic-activity" class="inline-block relative z-10">Ngurus Anak</span>
@@ -295,7 +309,7 @@
                     <!-- Mobile Text (Ringkas)-->
                     <p data-animate="fade-up" data-aos-delay="200"
                         class="block md:hidden text-[20px] text-gray-600 font-medium mb-6 leading-relaxed px-4">
-                        <br>Cara baru berjualan!<br /> Tanpa Produk. Tanpa Stok Barang. Tanpa Modal. Tanpa Ribet.
+                        Cara baru berjualan! <br> Tanpa Stok Barang. <br> Tanpa Modal. <br> Tanpa Ribet.
                     </p>
 
                     <div data-animate="fade-up" data-aos-delay="400"
@@ -314,11 +328,13 @@
 
                 <!-- Right Column: Image Slider Area -->
                 <!-- PENTING: `order-first md:order-last` artinya di HP dia di ATAS, di Desktop dia di TERAKHIR (Kanan) -->
-                <div class="relative z-10 mt-0 md:mt-0 order-first md:order-last" data-animate="fade-left">
+                <div id="hero-image-container" class="relative z-10 mt-0 md:mt-0 order-first md:order-last"
+                    data-animate="fade-left">
                     <!-- Container Gambar dengan Tinggi Fixed yang Besar 
                          🔥 TUTORIAL TINGGI AREA GAMBAR 🔥
                          Cari: `md:h-[650px]`
                          - Ubah angkanya sesuka hati (misal `700px`, `800px`) jika ingin gambar punya ruang lebih banyak.
+                         - 🔥 KHUSUS HP KECIL (360px-380px): Gunakan prefix `xs:h-[angka px]` (misal `xs:h-[400px]`) agar tidak kepotong.
                     -->
                     <div class="relative w-full h-[500px] md:h-[650px] mx-auto flex items-end justify-center">
 
@@ -351,10 +367,10 @@
 
                             <!-- GAMBAR 1: IBU (Contoh: Mundur dikit ke kanan 30px biar ga terlalu tengah) -->
                             <img src="../Images/happy mother.webp" alt="Ibu Mengasuh Anak" class="slide-image active-slide absolute 
-                                    bottom-0 md:bottom-10
-                                    right-[-75px] md:-right-36 lg:-right-28 
-                                    w-auto h-[70%] md:h-[600px]
-                                    scale-[1.1] md:scale-[1] origin-bottom
+                                    bottom-0 xs:bottom-[0px] md:bottom-10
+                                    right-[-75px] xs:right-[-75px] md:-right-36 lg:-right-28 
+                                    w-auto h-[70%] xs:h-[60%] md:h-[600px]
+                                    scale-[1.1] xs:scale-[1.0] md:scale-[1] origin-bottom
                                     max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
 
                             <!-- GAMBAR 2: MAHASISWA -->
@@ -367,20 +383,20 @@
                             -->
                             <img src="../Images/happy university students.webp" alt="Mahasiswa Kuliah" loading="lazy"
                                 class="slide-image inactive-slide absolute 
-                                    top-[60%] md:top-1/2
+                                    top-[60%] xs:top-[65%] md:top-1/2
                                     -translate-y-1/2 md:-translate-y-1/2
-                                    right-[-230px] md:right-4 lg:right-12 
-                                    w-auto h-[95%] md:h-[600px]
-                                    scale-[0.8] md:scale-[1.5] origin-center
+                                    right-[-230px] xs:right-[-200px] md:right-4 lg:right-12 
+                                    w-auto h-[95%] xs:h-[80%] md:h-[600px]
+                                    scale-[0.8] xs:scale-[0.7] md:scale-[1.5] origin-center
                                     max-w-none md:max-w-full object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
 
                             <!-- GAMBAR 3: OJOL (Contoh: Mundur agak jauh ke kanan 60px) -->
                             <img src="../Images/online ride hailing driver happy.webp" alt="Ojol Narik" loading="lazy"
                                 class="slide-image inactive-slide absolute 
-                                    bottom-0 md:bottom-2
-                                    right-[-105px] md:-right-20 lg:-right-40 
-                                    w-auto h-[65%] md:h-[600px]
-                                    scale-[1.3] md:scale-[1.1] origin-bottom
+                                    bottom-0 xs:bottom-[0px] md:bottom-2
+                                    right-[-105px] xs:right-[-90px] md:-right-20 lg:-right-40 
+                                    w-auto h-[65%] xs:h-[55%] md:h-[600px]
+                                    scale-[1.3] xs:scale-[1.2] md:scale-[1.1] origin-bottom
                                     max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
                         </div>
                     </div>
@@ -476,31 +492,37 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
             <!-- Header -->
-            <div class="text-center max-w-4xl mx-auto mb-16">
+            <div class="text-center max-w-4xl md:max-w-none mx-auto mb-16">
                 <!-- Badge -->
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-100 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
                     <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
                     <span class="text-xs md:text-sm font-bold text-gray-700 uppercase tracking-wide">Platform Affiliate
-                        Hub Karya Anak Bangsa 🇮🇩</span>
+                        Hub
+                        <br class="xs:block hidden"> Karya Anak Bangsa 🇮🇩
+                    </span>
                 </div>
 
                 <h2 class="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-8 leading-tight">
                     Kini Hadir <br class="md:hidden">
                     <img src="../Images/logo.png" alt="Jualeen"
-                        class="h-10 md:h-16 inline-block object-contain align-middle -mt-1 md:-mt-2">
+                        class="h-16 md:h-24 inline-block object-contain align-middle -mt-1.5 md:-mt-3">
                 </h2>
 
-                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light mb-12">
-                    <span class="font-bold text-gray-900">Jualeen</span> adalah jembatan yang menghubungkan
-                    <span class="text-brand-600 font-semibold bg-brand-50 px-2 rounded">Kamu (Affiliator)</span>
-                    dengan
-                    <span class="text-brand-600 font-semibold bg-brand-50 px-2 rounded">Bisnis Lokal Pilihan</span>.
+                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed font-light mb-12 max-w-6xl mx-auto">
+                    <span class="font-bold text-gray-900">Jualeen</span> adalah platform Affiliate Hub yang <br
+                        class="hidden md:block">
+                    menghubungkan <br class="xs:block hidden"> <span
+                        class="text-brand-600 font-semibold bg-brand-50 px-3 py-1 rounded-lg inline-block align-middle my-1">Anda
+                        (Affiliator)</span> <br class="xs:block hidden">
+                    dengan <br class="xs:block hidden"> <span
+                        class="text-brand-600 font-semibold bg-brand-50 px-3 py-1 rounded-lg inline-block align-middle my-1">Bisnis
+                        Lokal Pilihan</span>.
                 </p>
 
                 <!-- Partnership Illustration -->
                 <div
-                    class="relative w-full max-w-2xl md:max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-brand-100/50 border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
+                    class="relative w-full max-w-2xl md:max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-brand-100/50 border-4 border-white transform hover:scale-[1.02] xs:scale-110 transition-transform duration-500">
                     <img src="../Images/Partnership Illustration.png" alt="Partnership Illustration"
                         class="w-full h-auto object-cover">
                     <!-- Shine Effect -->
@@ -512,7 +534,8 @@
 
             <!-- Bottom CTA -->
             <div class="text-center" data-animate="fade-up" data-aos-delay="400" data-aos-offset="0">
-                <p class="text-gray-1000 font-medium italic mb-6">Penasaran gimana alurnya? Yuk, intip cara mainnya!</p>
+                <p class="text-lg md:text-2xl text-gray-1000 font-medium italic mb-6 md:mb-10">Penasaran gimana alurnya?
+                    Yuk, intip sistemnya!</p>
                 <a href="#how-it-works"
                     class="group inline-flex items-center justify-center w-14 h-14 rounded-full bg-white border border-brand-100 shadow-lg shadow-brand-100/50 text-brand-500 hover:text-white hover:bg-brand-500 hover:scale-110 transition-all duration-300 animate-bounce">
                     <i class="ph-bold ph-arrow-down text-xl group-hover:translate-y-1 transition-transform"></i>
@@ -709,7 +732,7 @@
                             <i class="ph-duotone ph-share-network text-4xl text-blue-500 mb-3 block"></i>
                             <h3 class="text-xl font-bold text-gray-900 h-14 flex items-center">Sebar ke Traffic</h3>
                         </div>
-                        <p class="text-gray-600 text-base leading-relaxed mb-4">
+                        <p class="text-gray-600 text-lg leading-relaxed mb-4">
                             Share link unik ke <span class="font-semibold text-gray-800">sosmed kamu</span>:
                         </p>
                         <div class="flex flex-wrap gap-2 mb-2">
@@ -718,7 +741,7 @@
                             <i class="ph-fill ph-whatsapp-logo text-green-600 text-xl"></i>
                             <i class="ph-fill ph-facebook-logo text-blue-600 text-xl"></i>
                         </div>
-                        <p class="text-xs text-gray-500 mb-4 leading-relaxed">
+                        <p class="text-sm text-gray-500 mb-4 leading-relaxed">
                             Atau ratusan kanal marketing pilihanmu, tidak terbatas oleh ekosistem platform tertentu!
                         </p>
                         <div class="pt-5 border-t border-gray-100 mt-auto">
@@ -923,8 +946,8 @@
                             <i class="ph-fill ph-check-circle text-brand-500 text-xl mr-3 mt-0.5"></i>
                             <div>
                                 <strong class="block text-gray-900 font-bold mb-1">Modal 0 Rupiah</strong>
-                                <span class="text-sm text-gray-600">Cuma butuh HP, Kuota, dan kemauan. Gratis
-                                    daftar.</span>
+                                <span class="text-sm text-gray-600">Cuma butuh HP, Kuota, dan kemauan. Pendaftaran
+                                    Gratis.</span>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -1056,7 +1079,7 @@
                     </div>
 
                     <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center animate-float"
+                    <div class="absolute -bottom-6 right-4 md:-right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center animate-float"
                         style="animation-delay: 1s;">
                         <div
                             class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mr-3">
@@ -1137,7 +1160,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10 md:[zoom:0.85] lg:[zoom:0.75]">
+    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
                 <!-- Brand Column -->

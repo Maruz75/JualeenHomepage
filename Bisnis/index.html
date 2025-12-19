@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jualeen Bisnis - Aktivasi Kanal Affiliate Marketing</title>
+    <meta name="description"
+        content="Aktivasi kanal marketing paling efisien saat ini. Ubah strategi Anda menjadi mesin pertumbuhan otomatis dengan Affiliate Marketing.">
+    <link rel="icon" type="image/png" href="../Images/logo only.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    screens: {
+                        'xs': { 'max': '380px' },
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f8ff',
+                            100: '#e0f4fe',
+                            200: '#b9e6fd',
+                            300: '#7cd3fc',
+                            400: '#36bffa',
+                            500: '#258df3',
+                            600: '#1a7bd6',
+                            700: '#026aa2',
+                            900: '#0c4a6e',
+                        },
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, #F0F9FF 0%, #ffffff 100%);
+        }
+
+        .pattern-dot {
+            background-image: radial-gradient(#E0F2FE 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+
+        /* Sistem Animasi Tersuai */
+        [data-animate] {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        [data-animate="fade-up"] {
+            transform: translateY(30px);
+        }
+
+        [data-animate="fade-left"] {
+            transform: translateX(30px);
+        }
+
+        [data-animate="fade-right"] {
+            transform: translateX(-30px);
+        }
+
+        [data-animate].animate-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        .text-change-enter {
+            animation: slideUpFade 0.5s forwards;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 antialiased overflow-x-hidden selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- 1. Navigasi (Sama seperti Affiliator) -->
+    <nav class="fixed w-full z-50 glass-effect transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20" id="navbar-container">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer space-x-2"
+                    onclick="window.location.href='../index.html'">
+                    <img src="../Images/logo.png" alt="Jualeen Logo"
+                        class="h-9 md:h-12 w-auto object-contain transition-all duration-300" id="navbar-logo">
+                    <span class="text-2xl font-display font-bold text-brand-500 hidden">Jualeen</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200">Home</a>
+                    <a href="javascript:void(0)"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200 cursor-default">Fitur</a>
+                    <a href="javascript:void(0)"
+                        class="text-brand-600 font-bold hover:text-brand-500 transition duration-200 cursor-default">Bisnis</a>
+                    <a href="../Affiliator/index.html"
+                        class="text-gray-600 hover:text-brand-500 font-medium transition duration-200">Affiliator</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://app.jualeen.com/login"
+                        class="text-gray-600 hover:text-brand-600 font-semibold transition tracking-wide">Masuk</a>
+                    <a href="https://app.jualeen.com/register"
+                        class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-brand-500/20 transition transform hover:-translate-y-0.5">
+                        Daftar Jadi Partner
+                    </a>
+                </div>
+
+                <!-- Butang Menu Mudah Alih -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-brand-500 focus:outline-none p-2 rounded-lg hover:bg-gray-50 transition">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full transition-all duration-300 ease-in-out shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Home</a>
+                <a href="javascript:void(0)"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Fitur</a>
+                <a href="javascript:void(0)"
+                    class="block px-4 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-xl transition">Bisnis</a>
+                <a href="../Affiliator/index.html"
+                    class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Affiliator</a>
+                <div class="pt-4 flex flex-col space-y-3 px-2">
+                    <a href="https://app.jualeen.com/login"
+                        class="w-full text-center px-4 py-3 border border-gray-200 rounded-xl text-gray-700 font-bold hover:bg-gray-50 transition">Masuk</a>
+                    <a href="https://app.jualeen.com/register"
+                        class="w-full text-center px-4 py-3 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-600 shadow-md transition">Daftar
+                        Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section: Precision Growth (Visual di Bawah Tajuk) -->
+    <section class="relative pt-32 lg:pt-52 pb-20 lg:pb-32 overflow-hidden hero-bg">
+        <div class="absolute inset-0 pattern-dot opacity-60 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="max-w-5xl mx-auto">
+                <!-- Lencana Peluang -->
+                <div data-animate="fade-up"
+                    class="inline-flex items-center px-4 py-2 rounded-full bg-white border border-brand-200 text-brand-600 text-xs font-bold uppercase tracking-widest mb-10 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span> Untuk Pemilik Bisnis &
+                    Brand
+                </div>
+
+                <!-- Tajuk Hero Baru -->
+                <h1 data-animate="fade-up" data-aos-delay="100"
+                    class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-slate-900 mb-8 leading-[1.15] tracking-tight">
+                    Aktivasi Marketing <br class="hidden md:block"> paling efisien saat ini: <br>
+                    <span class="text-brand-500 relative">Affiliate Marketing<svg
+                            class="absolute -bottom-2 left-0 w-full h-3 text-brand-200" viewBox="0 0 100 10"
+                            preserveAspectRatio="none">
+                            <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="none" />
+                        </svg></span>
+                </h1>
+
+                <p data-animate="fade-up" data-aos-delay="200"
+                    class="text-xl md:text-2xl font-bold text-slate-700 mb-6 uppercase tracking-wide">
+                    Hasil Nyata, Investasi Terukur.
+                </p>
+
+                <p data-animate="fade-up" data-aos-delay="300"
+                    class="text-base md:text-xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Stop bakar uang di iklan yang hasilnya tidak pasti. Bangun pasukan pemasar digital yang <span
+                        class="font-semibold text-slate-700">hanya dibayar saat produk Anda laku terjual.</span>
+                </p>
+
+                <!-- Tombol CTA -->
+                <div data-animate="fade-up" data-aos-delay="400"
+                    class="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+                    <a href="https://app.jualeen.com/register"
+                        class="px-10 py-5 bg-brand-500 text-white font-bold rounded-2xl shadow-2xl shadow-brand-500/30 hover:bg-brand-600 transition transform hover:-translate-y-1 flex items-center justify-center group text-lg">
+                        Mulai Gratis Sekarang <i
+                            class="ph-bold ph-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#how-it-works"
+                        class="px-10 py-5 bg-white text-gray-600 font-bold rounded-2xl border border-gray-200 hover:bg-gray-50 transition shadow-sm flex items-center justify-center text-lg">
+                        Lihat Cara Kerjanya
+                    </a>
+                </div>
+
+                <!-- Visual UI Mockup (Terletak di bawah Tajuk) -->
+                <div data-animate="fade-up" data-aos-delay="500" class="relative w-full max-w-5xl mx-auto">
+                    <div
+                        class="relative bg-white rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(37,141,243,0.15)] border border-slate-100 p-4 md:p-8 animate-float">
+                        <!-- Dashboard Preview -->
+                        <div class="rounded-[1.8rem] overflow-hidden border border-slate-50">
+                            <!-- Top Bar Mockup -->
+                            <div
+                                class="bg-slate-50 px-6 py-4 flex items-center justify-between border-b border-slate-100">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-300"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-300"></div>
+                                </div>
+                                <div
+                                    class="px-3 py-1 bg-white rounded-lg text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-100">
+                                    Live Dashboard v2.4</div>
+                            </div>
+                            <!-- Dashboard Content -->
+                            <div class="p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                                <div class="p-6 bg-brand-50 rounded-3xl border border-brand-100">
+                                    <p class="text-[10px] font-black text-brand-600 uppercase tracking-widest mb-1">
+                                        Total Omzet</p>
+                                    <p class="text-2xl font-black text-slate-900 leading-none">Rp 2.4B+</p>
+                                    <div class="mt-2 flex items-center text-xs font-bold text-green-500">
+                                        <i class="ph-bold ph-trend-up mr-1"></i> +45% Scale Up
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                                        Affiliator Terdaftar</p>
+                                    <p class="text-2xl font-black text-slate-900 leading-none">12,450</p>
+                                    <div class="mt-2 text-xs font-bold text-slate-400 italic">Terverifikasi Siap Jual
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                                        Efisiensi Iklan</p>
+                                    <p class="text-2xl font-black text-slate-900 leading-none">94%</p>
+                                    <div class="mt-2 flex items-center text-xs font-bold text-brand-500">
+                                        <i class="ph-bold ph-shield-check mr-1"></i> Tanpa Risiko Boncos
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Graph Placeholder -->
+                            <div class="px-10 pb-10 flex items-end justify-between h-32 gap-3">
+                                <div class="w-full bg-slate-100 h-[20%] rounded-t-xl"></div>
+                                <div class="w-full bg-slate-100 h-[35%] rounded-t-xl"></div>
+                                <div class="w-full bg-brand-100 h-[50%] rounded-t-xl"></div>
+                                <div class="w-full bg-brand-200 h-[75%] rounded-t-xl"></div>
+                                <div class="w-full bg-brand-500 h-[100%] rounded-t-xl shadow-lg shadow-brand-500/20">
+                                </div>
+                                <div class="w-full bg-brand-300 h-[60%] rounded-t-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Feature Spotlight: The All-in-One Sales Infrastructure -->
+    <section class="py-24 bg-white border-t border-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-24">
+                <span data-animate="fade-up"
+                    class="inline-block px-4 py-2 rounded-full bg-slate-50 text-slate-500 text-xs font-black uppercase tracking-[0.2em] mb-6">Sales
+                    Infrastructure</span>
+                <h2 data-animate="fade-up"
+                    class="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-8 tracking-tight leading-tight">
+                    Infrastruktur Penjualan Lengkap dalam Satu Genggaman.
+                </h2>
+                <p data-animate="fade-up" class="text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto">
+                    Jualeen menghapus hambatan teknis agar Anda bisa fokus pada satu hal: <span
+                        class="text-slate-900 font-bold underline decoration-brand-200 underline-offset-8">Kualitas
+                        Produk.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Feature Card 1 -->
+                <div data-animate="fade-up"
+                    class="group relative p-8 rounded-3xl bg-gradient-to-br from-brand-50 to-white border border-brand-100 hover:shadow-2xl hover:shadow-brand-100/50 transition-all duration-500 overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-brand-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-brand-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-users-three"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ribuan Affiliator Siap Jual</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Akses instan ke jaringan pemasar digital
+                            terverifikasi.</p>
+                        <!-- Visual: Mini Stats -->
+                        <div class="flex gap-4">
+                            <div class="flex-1 p-3 bg-white rounded-xl border border-brand-100 text-center">
+                                <p class="text-2xl font-bold text-brand-500">12K+</p>
+                                <p class="text-xs text-gray-400">Affiliator</p>
+                            </div>
+                            <div class="flex-1 p-3 bg-white rounded-xl border border-brand-100 text-center">
+                                <p class="text-2xl font-bold text-green-500">94%</p>
+                                <p class="text-xs text-gray-400">Aktif</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div data-animate="fade-up" data-aos-delay="100"
+                    class="group relative p-8 rounded-3xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-500 overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-indigo-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-indigo-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-magic-wand"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">AI Landing Page Builder</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Buat halaman produk yang menjual dalam hitungan
+                            detik.</p>
+                        <!-- Visual: Mockup -->
+                        <div class="bg-white rounded-xl border border-indigo-100 p-3 shadow-sm">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-2 h-2 rounded-full bg-red-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-300"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-300"></div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="h-3 bg-indigo-100 rounded w-3/4"></div>
+                                <div class="h-2 bg-gray-100 rounded w-full"></div>
+                                <div class="h-2 bg-gray-100 rounded w-5/6"></div>
+                                <div class="h-8 bg-indigo-500 rounded-lg w-1/2 mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div data-animate="fade-up"
+                    class="group relative p-8 rounded-3xl bg-gradient-to-br from-teal-50 to-white border border-teal-100 hover:shadow-2xl hover:shadow-teal-100/50 transition-all duration-500 overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-teal-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-teal-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-teal-500/30 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-chart-line-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Real-Time Analytics</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Pantau performa penjualan setiap saat.</p>
+                        <!-- Visual: Chart -->
+                        <div class="flex items-end justify-between h-16 gap-1 px-2">
+                            <div class="w-full bg-teal-100 rounded-t h-[30%]"></div>
+                            <div class="w-full bg-teal-200 rounded-t h-[50%]"></div>
+                            <div class="w-full bg-teal-300 rounded-t h-[40%]"></div>
+                            <div class="w-full bg-teal-400 rounded-t h-[70%]"></div>
+                            <div class="w-full bg-teal-500 rounded-t h-[100%] shadow-lg shadow-teal-500/30"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div data-animate="fade-up" data-aos-delay="100"
+                    class="group relative p-8 rounded-3xl bg-gradient-to-br from-amber-50 to-white border border-amber-100 hover:shadow-2xl hover:shadow-amber-100/50 transition-all duration-500 overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-amber-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-wallet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Komisi Otomatis</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6">Sistem pembagian hasil yang transparan dan
+                            otomatis.</p>
+                        <!-- Visual: Payment Flow -->
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex-1 p-2 bg-white rounded-lg border border-amber-100 text-center">
+                                <i class="ph-fill ph-shopping-cart text-amber-500 text-lg"></i>
+                                <p class="text-[10px] text-gray-400 mt-1">Order</p>
+                            </div>
+                            <i class="ph-bold ph-arrow-right text-amber-300"></i>
+                            <div class="flex-1 p-2 bg-white rounded-lg border border-amber-100 text-center">
+                                <i class="ph-fill ph-calculator text-amber-500 text-lg"></i>
+                                <p class="text-[10px] text-gray-400 mt-1">Hitung</p>
+                            </div>
+                            <i class="ph-bold ph-arrow-right text-amber-300"></i>
+                            <div class="flex-1 p-2 bg-amber-500 rounded-lg text-center">
+                                <i class="ph-fill ph-money text-white text-lg"></i>
+                                <p class="text-[10px] text-amber-100 mt-1">Cair!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Transformation (Desain Cerah) -->
+    <section class="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-24">
+                <span data-animate="fade-up"
+                    class="text-brand-600 font-bold text-xs uppercase tracking-[0.3em] mb-6 inline-block">The
+                    Transformation</span>
+                <h2 data-animate="fade-up"
+                    class="text-4xl md:text-6xl font-display font-extrabold text-slate-900 mb-8 tracking-tight leading-tight">
+                    Bagaimana Jualeen Mentransformasi Marketing Anda?</h2>
+                <p data-animate="fade-up" class="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                    Aktivasi sistem affiliate bukan sekadar menambah jalur penjualan, tapi merombak fundamental cara
+                    Anda menjangkau pasar.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Benefit Card 1 (Large) -->
+                <div data-animate="fade-up"
+                    class="lg:col-span-2 p-10 rounded-[3rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden">
+                    <div
+                        class="absolute right-0 top-0 w-64 h-64 bg-brand-50 rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+                        <div
+                            class="w-20 h-20 bg-brand-500 text-white rounded-3xl flex items-center justify-center text-4xl shadow-lg shadow-brand-500/30 shrink-0">
+                            <i class="ph-bold ph-trend-up"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Zero Risk Marketing</h4>
+                            <p class="text-gray-500 leading-relaxed text-lg">
+                                Jangan bayar untuk "klik" atau "exposure". Di Jualeen, marketing cost Anda = 0 sampai
+                                ada penjualan yang terverifikasi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 2 -->
+                <div data-animate="fade-up" data-aos-delay="100"
+                    class="p-10 rounded-[3rem] bg-slate-900 text-white border border-slate-800 shadow-xl hover:shadow-2xl transition-all group relative overflow-hidden">
+                    <div
+                        class="absolute right-0 bottom-0 w-32 h-32 bg-slate-800 rounded-full translate-x-1/2 translate-y-1/2 group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-white/10 text-brand-400 rounded-2xl flex items-center justify-center text-3xl mb-6 backdrop-blur-sm">
+                            <i class="ph-bold ph-users-four"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Organic Reach</h4>
+                        <p class="text-slate-400 leading-relaxed">
+                            Produk Anda dipromosikan oleh manusia asli (KOL/Affiliator), bukan bot.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 3 -->
+                <div data-animate="fade-up" data-aos-delay="200"
+                    class="p-10 rounded-[3rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden">
+                    <div
+                        class="absolute left-0 bottom-0 w-32 h-32 bg-green-50 rounded-full -translate-x-1/2 translate-y-1/2 group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            <i class="ph-bold ph-shield-check"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Fraud Protection</h4>
+                        <p class="text-gray-500 leading-relaxed">
+                            Sistem kami mendeteksi order fiktif untuk melindungi margin Anda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit Card 4 (Large) -->
+                <div data-animate="fade-up" data-aos-delay="300"
+                    class="lg:col-span-2 p-10 rounded-[3rem] bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-xl hover:shadow-2xl hover:shadow-brand-500/40 transition-all group relative overflow-hidden">
+                    <div class="absolute inset-0 pattern-dot opacity-10"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                        <div class="text-center md:text-left flex-1">
+                            <h4 class="text-2xl font-extrabold mb-2">Scale Up Tanpa Batas</h4>
+                            <p class="text-brand-100 leading-relaxed text-lg">
+                                Tidak perlu rekrut tim sales baru. Cukup upload produk, ribuan affiliator siap membantu
+                                penjualan Anda hari ini juga.
+                            </p>
+                        </div>
+                        <div
+                            class="shrink-0 w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-5xl backdrop-blur-sm">
+                            <i class="ph-bold ph-rocket-launch text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Logic Section: Steps -->
+    <section id="how-it-works" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 data-animate="fade-up"
+                    class="text-4xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Mulai Ekspansi dalam <span class="text-brand-500">4 Langkah Mudah:</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div data-animate="fade-up" class="relative group">
+                    <div
+                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            1
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Upload Produk</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Masukkan info produk dan komisi yang Anda
+                            tawarkan.</p>
+                    </div>
+                    <!-- Connector Line (Desktop) -->
+                    <div
+                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div data-animate="fade-up" data-aos-delay="100" class="relative group">
+                    <div
+                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            2
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">AI Bekerja</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Sistem membuatkan landing page & bahan promosi
+                            otomatis.</p>
+                    </div>
+                    <!-- Connector Line (Desktop) -->
+                    <div
+                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div data-animate="fade-up" data-aos-delay="200" class="relative group">
+                    <div
+                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            3
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Affiliator Sebar</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Produk dipromosikan oleh ribuan partner secara
+                            serentak.</p>
+                    </div>
+                    <!-- Connector Line (Desktop) -->
+                    <div
+                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div data-animate="fade-up" data-aos-delay="300" class="relative group">
+                    <div
+                        class="p-8 rounded-3xl bg-brand-500 text-white shadow-xl shadow-brand-500/20 h-full transform hover:-translate-y-2 transition-transform duration-500">
+                        <div
+                            class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 backdrop-blur-sm">
+                            <i class="ph-bold ph-check"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Cuan Otomatis</h4>
+                        <p class="text-brand-100 text-sm leading-relaxed">Pesanan masuk, Anda kirim barang, komisi
+                            terbagi otomatis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Final Statement & Bold Footer CTA -->
+    <section class="py-24 lg:py-40 relative overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 pattern-dot opacity-[0.03] z-0"></div>
+        <div
+            class="absolute -top-1/4 -right-1/4 w-full h-full bg-brand-500/10 rounded-full blur-[160px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div data-animate="fade-up" class="max-w-4xl mx-auto mb-20">
+                <h2
+                    class="text-4xl md:text-5xl font-display font-extrabold text-white mb-10 tracking-tight leading-tight">
+                    Ekosistem yang Tumbuh Bersama.</h2>
+                <p class="text-xl text-slate-400 leading-relaxed">
+                    Jualeen berkomitmen menjaga standar kualitas tinggi. Dengan <span
+                        class="text-brand-400 font-bold uppercase tracking-widest">verifikasi partner yang ketat</span>
+                    dan transparansi data mutlak, kami memastikan bisnis Anda berada di lingkungan yang sehat.
+                </p>
+            </div>
+
+            <div data-animate="fade-up" data-aos-delay="100" class="relative group max-w-5xl mx-auto">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-indigo-600 rounded-[3.5rem] blur opacity-25 group-hover:opacity-60 transition duration-1000">
+                </div>
+                <div
+                    class="relative p-12 lg:p-20 bg-slate-800/50 backdrop-blur-sm border border-white/5 rounded-[3.5rem] overflow-hidden">
+                    <h3
+                        class="text-3xl md:text-5xl font-display font-extrabold text-white mb-8 tracking-tight leading-tight">
+                        Optimalkan Potensi Bisnis Anda Sekarang.</h3>
+                    <p class="text-slate-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                        Bergabunglah dengan ratusan brand lainnya yang telah beralih ke strategi marketing berbasis
+                        hasil.
+                    </p>
+                    <a href="https://app.jualeen.com/register"
+                        class="group relative inline-flex items-center px-12 py-5 bg-brand-500 text-white font-extrabold rounded-2xl shadow-2xl shadow-brand-500/30 hover:bg-brand-600 transition-all transform hover:-translate-y-1 w-full sm:w-auto justify-center overflow-hidden">
+                        <span class="relative z-10 text-xl tracking-wide uppercase">Aktifkan Bisnis Saya - Gratis</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer">
+                        </div>
+                        <i class="ph-bold ph-arrow-right ml-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <p class="mt-8 text-slate-500 text-sm font-medium uppercase tracking-widest">Tanpa Biaya Pendaftaran
+                        • Tanpa Kontrak Ribet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Identik dengan Halaman Affiliator) -->
+    <footer class="bg-gray-50 border-t border-gray-200 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+                <!-- Brand Column -->
+                <div class="col-span-2 lg:col-span-2 pr-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../Images/logo.png" alt="Jualeen Logo" class="h-10 w-auto object-contain"
+                            loading="lazy">
+                        <span class="ml-2 text-2xl font-display font-bold text-gray-800 hidden">Jualeen</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-8 max-w-sm leading-relaxed">
+                        Platform affiliate hub Indonesia terdepan. Kami menghubungkan bisnis potensial dengan
+                        affiliator handal untuk scale bisnis tanpa batas.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-instagram-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-facebook-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-linkedin-logo text-2xl"></i></a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-brand-500 transition transform hover:scale-110 cursor-default"><i
+                                class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Columns -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Produk</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Fitur
+                                Utama</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Harga &
+                                Paket</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">AI
+                                Builder</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Resources</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Dokumentasi</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Blog
+                                Tips</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Pusat
+                                Bantuan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Perusahaan</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="javascript:void(0)" class="hover:text-brand-500 transition cursor-default">Tentang
+                                Kami</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Karir</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="hover:text-brand-500 transition cursor-default">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 Jualeen. Hak cipta dilindungi.</p>
+                <div
+                    class="flex items-center mt-4 md:mt-0 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                    <span class="flex items-center tracking-tight">Made with <i
+                            class="ph-fill ph-heart text-red-500 mx-1"></i> in Yogyakarta, Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation Observer
+            const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+            // Navbar Logic
+            const navbar = document.getElementById('navbar');
+            const navContainer = document.getElementById('navbar-container');
+            const navLogo = document.getElementById('navbar-logo');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md');
+                    navContainer.classList.replace('h-20', 'h-16');
+                    navLogo.classList.replace('md:h-12', 'md:h-10');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navContainer.classList.replace('h-16', 'h-20');
+                    navLogo.classList.replace('md:h-10', 'md:h-12');
+                }
+            });
+
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.onclick = () => {
+                    menu.classList.toggle('hidden');
+                    const icon = btn.querySelector('i');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.replace('ph-x', 'ph-list');
+                    } else {
+                        icon.classList.replace('ph-list', 'ph-x');
+                    }
+                };
+            }
+
+            // Force Hero Trigger
+            setTimeout(() => {
+                document.querySelectorAll('.hero-bg [data-animate]').forEach(el => {
+                    el.classList.add('animate-visible');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
