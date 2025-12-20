@@ -144,7 +144,7 @@
                         class="text-gray-600 hover:text-brand-500 font-medium transition duration-200 cursor-default">Fitur</a>
                     <a href="javascript:void(0)"
                         class="text-brand-600 font-bold hover:text-brand-500 transition duration-200 cursor-default">Bisnis</a>
-                    <a href="../Affiliator/index.html"
+                    <a href="../affiliator/index.html"
                         class="text-gray-600 hover:text-brand-500 font-medium transition duration-200">Affiliator</a>
                 </div>
 
@@ -178,7 +178,7 @@
                     class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Fitur</a>
                 <a href="javascript:void(0)"
                     class="block px-4 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-xl transition">Bisnis</a>
-                <a href="../Affiliator/index.html"
+                <a href="../affiliator/index.html"
                     class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-brand-50 rounded-xl transition">Affiliator</a>
                 <div class="pt-4 flex flex-col space-y-3 px-2">
                     <a href="https://app.jualeen.com/login"
@@ -191,118 +191,235 @@
         </div>
     </nav>
 
-    <!-- 2. Hero Section: Precision Growth (Visual di Bawah Tajuk) -->
-    <section class="relative pt-32 lg:pt-52 pb-20 lg:pb-32 overflow-hidden hero-bg">
+    <!-- HERO SECTION FIXED -->
+    <!-- 
+        =================================================================================
+        🔥 PANDUAN EDIT TINGGI SECTION (TUTORIAL) 🔥
+        =================================================================================
+        Ingin heronya lebih tinggi? atau lebih pendek?
+        
+        1. Padding Bawah (Jarak antara konten hero dengan section di bawahnya)
+           Cari: `lg:pb-24` di tag <section> di bawah ini.
+           - `lg:pb-10`: Pendek (Rapat).
+           - `lg:pb-24`: Sedang (Standard sekarang).
+           - `lg:pb-32`: Tinggi (Lebih luas).
+           - `lg:pb-40`: Sangat Tinggi (Luas sekali).
+           
+        🔥 PANDUAN PADDING (JARAK) TERPISAH 🔥
+        
+        🔥 UNTUK HP (MOBILE) 🔥
+        Ubah yang TIDAK ADA `lg:` nya.
+        1. JARAK DARI NAVBAR (HEADER):
+           - Cari: `pt-5`
+           - `pt-0`  : Nempel banget ke atas (bisa ketutup navbar).
+           - `pt-5`  : Ada jarak dikit (sekarang).
+           - `pt-20` : Jarak aman (di bawah navbar pas).
+           - Makin KECIL angka = Makin KE ATAS (Mepet Navbar).
+           
+        2. JARAK KE BAWAH:
+           - Cari: `pb-0`
+    -->
+    <style>
+        @media (max-width: 400px) {
+            #hero-section {
+                padding-top: 0px !important;
+            }
+
+            #hero-image-container {
+                margin-top: -90px !important;
+            }
+        }
+    </style>
+    <section id="hero-section"
+        class="relative pt-24 lg:pt-32 pb-0 lg:pb-24 overflow-hidden hero-bg md:[zoom:0.9] lg:[zoom:0.85]">
+        <!-- Background Decorations -->
         <div class="absolute inset-0 pattern-dot opacity-60 z-0"></div>
+        <div
+            class="absolute top-20 right-0 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float hidden md:block">
+        </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="max-w-5xl mx-auto">
-                <!-- Lencana Peluang -->
-                <div data-animate="fade-up"
-                    class="inline-flex items-center px-4 py-2 rounded-full bg-white border border-brand-200 text-brand-600 text-xs font-bold uppercase tracking-widest mb-10 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span> Untuk Pemilik Bisnis &
-                    Brand
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Grid dengan items-center agar teks dan gambar sejajar secara vertikal -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
+
+                <!-- Left Column: Text Area -->
+                <!-- PENTING: `order-last md:order-first` artinya di HP dia di BAWAH, di Desktop dia di PERTAMA (Kiri) -->
+                <div class="text-center md:text-left z-20 pb-8 md:pb-0 order-last md:order-first">
+                    <div data-animate="fade-down"
+                        class="inline-flex items-center px-4 py-1.5 md:px-5 md:py-2 rounded-full bg-white border border-brand-200 text-brand-600 text-sm md:text-base font-semibold mb-6 shadow-sm mx-auto md:mx-0 w-fit">
+                        <span class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-green-400 mr-2.5 animate-pulse"></span>
+                        Solusi Untuk Brand & Bisnis
+                    </div>
+
+                    <h1 data-animate="fade-up"
+                        class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-[30px] xs:mb-[15px] md:mb-[50px] leading-[1.1]">
+                        Aktivasi<br> Model Marketing <br>
+                        <span class="block mt-1">
+                            <span class="relative inline-block">
+                                <span class="text-brand-500">Paling Efisien</span>
+                                <svg class="absolute -bottom-2 left-0 w-full h-3 text-brand-200/60" viewBox="0 0 100 10"
+                                    preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="6" fill="none"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            Saat Ini!
+                        </span>
+                    </h1>
+
+                    <!-- 
+                        =========================================================
+                        🔥 PANDUAN ADJUST TEXT DESKTOP (DI BAWAH HEADLINE) 🔥
+                        =========================================================
+                        1. UKURAN TEXT: Ubah class `text-xl` pada tag <h2> 
+                           (Contoh: `text-2xl` untuk lebih besar, `text-[26px]` untuk custom)
+                        2. WARNA: Gunakan `text-gray-500`, `text-brand-600`, dll.
+                        3. LEBAR BLOK: Ubah `max-w-3xl` jika text turun ke bawah secara paksa.
+                    -->
+                    <!-- Desktop Text -->
+                    <h2 data-animate="fade-up" data-aos-delay="200"
+                        class="hidden md:block text-[25px] text-gray-600 font-medium mb-12 max-w-3xl leading-relaxed">
+                        <span class="block">Stop beriklan di media yang hasilnya nggak pasti!</span>
+                        <span class="block text-gray-500">Serahkan Marketing pada jaringan affiliator kami.</span>
+                    </h2>
+
+                    <!-- Mobile Text (Ringkas)-->
+                    <p data-animate="fade-up" data-aos-delay="200"
+                        class="block md:hidden text-[20px] text-gray-600 font-medium mb-6 leading-relaxed px-4">
+                        Stop bakar uang iklan! <br> Biar affiliator yang jualan. <br> Bayar komisi kalau laku.
+                    </p>
+
+                    <div data-animate="fade-up" data-aos-delay="400"
+                        class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4 px-4 md:px-0">
+                        <a href="https://app.jualeen.com/register"
+                            class="px-6 py-3.5 bg-brand-500 text-white font-bold rounded-xl shadow-lg hover:bg-brand-600 transition-all text-base md:text-lg flex items-center justify-center group transform hover:-translate-y-1">
+                            Daftar Jadi Partner
+                            <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#how-it-works"
+                            class="hidden md:flex px-8 py-3.5 bg-white text-gray-600 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all text-lg items-center justify-center shadow-sm">
+                            Pelajari Sistemnya
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tajuk Hero Baru -->
-                <h1 data-animate="fade-up" data-aos-delay="100"
-                    class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-slate-900 mb-8 leading-[1.15] tracking-tight">
-                    Aktivasi Marketing <br class="hidden md:block"> paling efisien saat ini: <br>
-                    <span class="text-brand-500 relative">Affiliate Marketing<svg
-                            class="absolute -bottom-2 left-0 w-full h-3 text-brand-200" viewBox="0 0 100 10"
-                            preserveAspectRatio="none">
-                            <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="none" />
-                        </svg></span>
-                </h1>
+                <!-- Right Column: Image Hero Area -->
+                <!-- PENTING: `order-first md:order-last` artinya di HP dia di ATAS, di Desktop dia di TERAKHIR (Kanan) -->
+                <div id="hero-image-container" class="relative z-10 mt-0 md:mt-0 order-first md:order-last"
+                    data-animate="fade-left">
+                    <!-- Container Gambar dengan Tinggi Fixed yang Besar -->
+                    <div <div
+                        class="relative w-full h-[500px] xs:h-[380px] md:h-[650px] mx-auto flex items-end justify-center">
 
-                <p data-animate="fade-up" data-aos-delay="200"
-                    class="text-xl md:text-2xl font-bold text-slate-700 mb-6 uppercase tracking-wide">
-                    Hasil Nyata, Investasi Terukur.
-                </p>
+                        <div id="hero-slider-images" class="w-full h-full relative">
+                            <!-- 
+                                =========================================================
+                                🔥 PANDUAN ADJUST HERO (HP KECIL / XS) 🔥
+                                =========================================================
+                                Khusus layar lebar < 380px (Galaxy Fold, Nexus 5, dll).
+                                Gunakan prefix `xs:` untuk mengubah nilai.
 
-                <p data-animate="fade-up" data-aos-delay="300"
-                    class="text-base md:text-xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-                    Stop bakar uang di iklan yang hasilnya tidak pasti. Bangun pasukan pemasar digital yang <span
-                        class="font-semibold text-slate-700">hanya dibayar saat produk Anda laku terjual.</span>
-                </p>
+                                1. GAMBAR UTAMA (.slide-image)
+                                   - Ukuran: `xs:scale-[0.75]` (Makin kecil angka = Makin kecil)
+                                   - Geser Kanan/Kiri: `xs:right-[-60px]`
+                                   - Tinggi Maksimal: `xs:h-[85%]`
 
-                <!-- Tombol CTA -->
-                <div data-animate="fade-up" data-aos-delay="400"
-                    class="flex flex-col sm:flex-row gap-4 justify-center mb-20">
-                    <a href="https://app.jualeen.com/register"
-                        class="px-10 py-5 bg-brand-500 text-white font-bold rounded-2xl shadow-2xl shadow-brand-500/30 hover:bg-brand-600 transition transform hover:-translate-y-1 flex items-center justify-center group text-lg">
-                        Mulai Gratis Sekarang <i
-                            class="ph-bold ph-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#how-it-works"
-                        class="px-10 py-5 bg-white text-gray-600 font-bold rounded-2xl border border-gray-200 hover:bg-gray-50 transition shadow-sm flex items-center justify-center text-lg">
-                        Lihat Cara Kerjanya
-                    </a>
-                </div>
+                                2. KARTU MELAYANG (Floating Cards)
+                                   - Ukuran Global: `xs:scale-[0.65]` atau `xs:scale-[0.75]`
+                                   - Letak Vertikal: `xs:bottom-[150px]`
+                                   - Letak Horizontal: `xs:left-0` atau `xs:-right-2`
+                            -->
 
-                <!-- Visual UI Mockup (Terletak di bawah Tajuk) -->
-                <div data-animate="fade-up" data-aos-delay="500" class="relative w-full max-w-5xl mx-auto">
-                    <div
-                        class="relative bg-white rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(37,141,243,0.15)] border border-slate-100 p-4 md:p-8 animate-float">
-                        <!-- Dashboard Preview -->
-                        <div class="rounded-[1.8rem] overflow-hidden border border-slate-50">
-                            <!-- Top Bar Mockup -->
+                            <!-- GAMBAR: Business Woman -->
+                            <img src="../Images/business woman.webp" alt="Business Owner" class="slide-image active-slide absolute 
+                                    bottom-0 xs:bottom-[-20] md:bottom-0
+                                    right-[-40px] xs:right-[-10px] md:right-0 lg:right-10
+                                    w-auto h-[85%] xs:h-[85%] md:h-[650px]
+                                    scale-[1] xs:scale-[1] md:scale-[1] origin-bottom
+                                    max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
+
+                            <!-- Floating Stats Card -->
+                            <!-- Gradient Mask to Hide Cut-off -->
                             <div
-                                class="bg-slate-50 px-6 py-4 flex items-center justify-between border-b border-slate-100">
-                                <div class="flex space-x-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-300"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-300"></div>
+                                class="absolute -bottom-1 left-0 w-full h-40 bg-gradient-to-t from-[#ffffff] via-[#ffffff]/80 to-transparent z-10">
+                            </div>
+
+                            <!-- 
+                                💡 TUTORIAL ADJUST KARTU AFFILIATOR (DESKTOP):
+                                - Atur Jarak Bawah: Ubah angka di `md:bottom-[170px]`
+                                - Atur Jarak Kiri: Ubah angka di `md:-left-[53px]` (Makin besar minus = makin ke kiri)
+                            -->
+                            <!-- Card 1: Total Affiliator (Left Floating) -->
+                            <div
+                                class="absolute bottom-40 xs:bottom-[150px] md:bottom-[250px] -left-6 xs:left-0 md:-left-[120px] bg-white/90 backdrop-blur-md p-3 md:p-4 pr-5 md:pr-7 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform -rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.65] md:scale-[1.2] xs:origin-left">
+                                <div class="flex -space-x-2 md:-space-x-3">
+                                    <div
+                                        class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-sm overflow-hidden relative">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Affiliator 1"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div
+                                        class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-sm overflow-hidden relative">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Affiliator 2"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div
+                                        class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-sm overflow-hidden relative">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Affiliator 3"
+                                            class="w-full h-full object-cover">
+                                    </div>
                                 </div>
+                                <div>
+                                    <p class="text-[10px] md:text-[11px] text-gray-400 font-bold uppercase">Affiliator
+                                        Anda</p>
+                                    <div class="flex items-baseline gap-1">
+                                        <p class="text-xs md:text-sm font-bold text-gray-800">571</p>
+                                        <span
+                                            class="text-[9px] md:text-[10px] text-green-500 font-bold whitespace-nowrap">+3
+                                            Hari ini</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Commission Paid (Right Floating) -->
+                            <div class="absolute bottom-24 xs:bottom-[90px] -right-2 xs:-right-4 md:-right-16 bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.65] md:scale-[1.2] xs:origin-right"
+                                style="animation-delay: 1.5s;">
                                 <div
-                                    class="px-3 py-1 bg-white rounded-lg text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-100">
-                                    Live Dashboard v2.4</div>
-                            </div>
-                            <!-- Dashboard Content -->
-                            <div class="p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                                <div class="p-6 bg-brand-50 rounded-3xl border border-brand-100">
-                                    <p class="text-[10px] font-black text-brand-600 uppercase tracking-widest mb-1">
-                                        Total Omzet</p>
-                                    <p class="text-2xl font-black text-slate-900 leading-none">Rp 2.4B+</p>
-                                    <div class="mt-2 flex items-center text-xs font-bold text-green-500">
-                                        <i class="ph-bold ph-trend-up mr-1"></i> +45% Scale Up
-                                    </div>
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-xl md:text-2xl shadow-inner">
+                                    <i class="ph-fill ph-money"></i>
                                 </div>
-                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
-                                        Affiliator Terdaftar</p>
-                                    <p class="text-2xl font-black text-slate-900 leading-none">12,450</p>
-                                    <div class="mt-2 text-xs font-bold text-slate-400 italic">Terverifikasi Siap Jual
-                                    </div>
-                                </div>
-                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
-                                        Efisiensi Iklan</p>
-                                    <p class="text-2xl font-black text-slate-900 leading-none">94%</p>
-                                    <div class="mt-2 flex items-center text-xs font-bold text-brand-500">
-                                        <i class="ph-bold ph-shield-check mr-1"></i> Tanpa Risiko Boncos
-                                    </div>
+                                <div>
+                                    <p class="text-[10px] md:text-[11px] text-gray-400 font-bold uppercase">Revenue</p>
+                                    <p class="text-sm md:text-base font-black text-gray-800">Rp 125jt++</p>
                                 </div>
                             </div>
-                            <!-- Graph Placeholder -->
-                            <div class="px-10 pb-10 flex items-end justify-between h-32 gap-3">
-                                <div class="w-full bg-slate-100 h-[20%] rounded-t-xl"></div>
-                                <div class="w-full bg-slate-100 h-[35%] rounded-t-xl"></div>
-                                <div class="w-full bg-brand-100 h-[50%] rounded-t-xl"></div>
-                                <div class="w-full bg-brand-200 h-[75%] rounded-t-xl"></div>
-                                <div class="w-full bg-brand-500 h-[100%] rounded-t-xl shadow-lg shadow-brand-500/20">
+
+                            <!-- Card 3: Products Sold (Bottom Center Overlay) -->
+                            <div class="absolute bottom-8 xs:bottom-2 left-8 xs:left-[15%] md:left-24 bg-white/95 backdrop-blur-xl p-4 md:p-5 rounded-2xl shadow-[0_15px_35px_rgb(0,0,0,0.1)] border border-white/60 animate-float z-30 flex items-center gap-4 min-w-[180px] md:min-w-[220px] xs:scale-[0.75] md:scale-[1.15]"
+                                style="animation-delay: 0.8s;">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-500 text-white flex items-center justify-center text-xl md:text-2xl shadow-lg shadow-brand-500/30">
+                                    <i class="ph-bold ph-package"></i>
                                 </div>
-                                <div class="w-full bg-brand-300 h-[60%] rounded-t-xl"></div>
+                                <div>
+                                    <p class="text-xs md:text-sm text-brand-600 font-bold mb-0.5">Produk Terjual</p>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-xl md:text-2xl font-black text-gray-900">8,450</span>
+                                        <span class="text-[10px] md:text-xs text-green-500 font-bold">▲ 12%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
         </div>
     </section>
 
     <!-- 3. Feature Spotlight: The All-in-One Sales Infrastructure -->
-    <section class="py-24 bg-white border-t border-slate-50">
+    <section class="py-24 bg-white border-t border-slate-50 lg:[zoom:0.8]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto mb-24">
                 <span data-animate="fade-up"
@@ -441,7 +558,7 @@
     </section>
 
     <!-- 4. The Transformation (Desain Cerah) -->
-    <section class="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+    <section class="py-24 lg:py-32 bg-slate-50 relative overflow-hidden lg:[zoom:0.8]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-24">
                 <span data-animate="fade-up"
@@ -537,81 +654,100 @@
     </section>
 
     <!-- 5. Logic Section: Steps -->
-    <section id="how-it-works" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-24">
+    <section id="how-it-works"
+        class="py-24 lg:py-32 bg-gradient-to-b from-white to-brand-50 relative overflow-hidden lg:[zoom:0.8]">
+        <!-- Abstract Background -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-200 blur-3xl"></div>
+            <div class="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-blue-100 blur-3xl"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div data-animate="fade-up"
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-widest mb-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2"></span> Simple Process
+                </div>
                 <h2 data-animate="fade-up"
-                    class="text-4xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight leading-tight">
-                    Mulai Ekspansi dalam <span class="text-brand-500">4 Langkah Mudah:</span>
+                    class="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight leading-tight">
+                    Mulai Ekspansi dalam <br /> <span class="text-brand-500">4 Langkah Mudah:</span>
                 </h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div data-animate="fade-up" class="relative group">
-                    <div
-                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
-                        <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                            1
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">Upload Produk</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Masukkan info produk dan komisi yang Anda
-                            tawarkan.</p>
-                    </div>
-                    <!-- Connector Line (Desktop) -->
-                    <div
-                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
-                    </div>
+            <div class="relative">
+                <!-- Connecting Line for Desktop -->
+                <div
+                    class="hidden lg:block absolute top-12 left-[10%] w-[80%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200 border-t-2 border-dashed border-brand-300 z-0">
                 </div>
 
-                <!-- Step 2 -->
-                <div data-animate="fade-up" data-aos-delay="100" class="relative group">
-                    <div
-                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                    <!-- Step 1 -->
+                    <div data-animate="fade-up" class="relative group">
                         <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                            2
+                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
+                            <div
+                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
+                                <i class="ph-bold ph-upload-simple"></i>
+                                <div
+                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
+                                    1</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Upload Produk</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Masukkan info produk dan komisi yang Anda
+                                tawarkan.</p>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">AI Bekerja</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Sistem membuatkan landing page & bahan promosi
-                            otomatis.</p>
                     </div>
-                    <!-- Connector Line (Desktop) -->
-                    <div
-                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
-                    </div>
-                </div>
 
-                <!-- Step 3 -->
-                <div data-animate="fade-up" data-aos-delay="200" class="relative group">
-                    <div
-                        class="p-8 rounded-3xl bg-slate-50 border border-slate-100 h-full hover:bg-white hover:shadow-xl transition-all duration-500">
+                    <!-- Step 2 -->
+                    <div data-animate="fade-up" data-aos-delay="100" class="relative group">
                         <div
-                            class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-2xl font-bold text-slate-900 mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                            3
+                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
+                            <div
+                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl -rotate-2 group-hover:-rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
+                                <i class="ph-bold ph-magic-wand"></i>
+                                <div
+                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
+                                    2</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">AI Bekerja</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Sistem membuatkan landing page & bahan
+                                promosi otomatis.</p>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">Affiliator Sebar</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Produk dipromosikan oleh ribuan partner secara
-                            serentak.</p>
                     </div>
-                    <!-- Connector Line (Desktop) -->
-                    <div
-                        class="hidden lg:block absolute top-12 right-0 translate-x-1/2 w-8 border-t-2 border-dashed border-slate-200 z-10">
-                    </div>
-                </div>
 
-                <!-- Step 4 -->
-                <div data-animate="fade-up" data-aos-delay="300" class="relative group">
-                    <div
-                        class="p-8 rounded-3xl bg-brand-500 text-white shadow-xl shadow-brand-500/20 h-full transform hover:-translate-y-2 transition-transform duration-500">
+                    <!-- Step 3 -->
+                    <div data-animate="fade-up" data-aos-delay="200" class="relative group">
                         <div
-                            class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 backdrop-blur-sm">
-                            <i class="ph-bold ph-check"></i>
+                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
+                            <div
+                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
+                                <i class="ph-bold ph-megaphone"></i>
+                                <div
+                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
+                                    3</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Affiliator Sebar</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Produk dipromosikan oleh ribuan partner
+                                secara serentak.</p>
                         </div>
-                        <h4 class="text-xl font-bold mb-2">Cuan Otomatis</h4>
-                        <p class="text-brand-100 text-sm leading-relaxed">Pesanan masuk, Anda kirim barang, komisi
-                            terbagi otomatis.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div data-animate="fade-up" data-aos-delay="300" class="relative group">
+                        <div
+                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
+                            <div
+                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl -rotate-2 group-hover:-rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
+                                <i class="ph-bold ph-wallet"></i>
+                                <div
+                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
+                                    4</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Cuan Otomatis</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Pesanan masuk, Anda kirim barang, komisi
+                                terbagi otomatis.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -619,7 +755,7 @@
     </section>
 
     <!-- 6. Final Statement & Bold Footer CTA -->
-    <section class="py-24 lg:py-40 relative overflow-hidden bg-slate-900">
+    <section class="py-24 lg:py-40 relative overflow-hidden bg-slate-900 lg:[zoom:0.8]">
         <div class="absolute inset-0 pattern-dot opacity-[0.03] z-0"></div>
         <div
             class="absolute -top-1/4 -right-1/4 w-full h-full bg-brand-500/10 rounded-full blur-[160px] pointer-events-none">
@@ -746,9 +882,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animation Observer
-            const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
-            const observer = new IntersectionObserver((entries) => {
+            // Custom Animation System (IntersectionObserver)
+            // Fixes visibility issues caused by CSS zoom on desktop
+            const isDesktop = window.innerWidth >= 768;
+            const bottomMargin = isDesktop ? '-100px' : '-50px';
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: `0px 0px ${bottomMargin} 0px`,
+                threshold: 0.15 // Trigger when 15% visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-visible');
@@ -757,7 +902,22 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                // Handle delay via inline style if attribute exists
+                const delay = el.getAttribute('data-aos-delay');
+                if (delay) {
+                    el.style.transitionDelay = `${delay}ms`;
+                }
+                observer.observe(el);
+            });
+
+            // Force Hero animations
+            setTimeout(() => {
+                document.querySelectorAll('.hero-bg [data-animate]').forEach(el => {
+                    el.classList.add('animate-visible');
+                    observer.unobserve(el);
+                });
+            }, 100);
 
             // Navbar Logic
             const navbar = document.getElementById('navbar');
