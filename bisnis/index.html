@@ -222,11 +222,42 @@
     <style>
         @media (max-width: 400px) {
             #hero-section {
-                padding-top: 0px !important;
+                padding-top: 60px !important;
             }
 
             #hero-image-container {
-                margin-top: -90px !important;
+                margin-top: -30px !important;
+            }
+
+            /* KHUSUS 360x800 */
+            #hero-gradient {
+                height: 120px !important;
+                bottom: -55px !important;
+                background: linear-gradient(to top, #ffffff 10%, rgba(255, 255, 255, 0.9) 60%, transparent 100%) !important;
+            }
+
+            .slide-image {
+                bottom: -50px !important;
+            }
+
+            #hero-card-affiliator {
+                transform: scale(0.5) rotate(-3deg) !important;
+                bottom: 210px !important;
+                left: -10px !important;
+                transform-origin: left bottom !important;
+            }
+
+            #hero-card-revenue {
+                transform: scale(0.5) rotate(3deg) !important;
+                bottom: 150px !important;
+                right: -10px !important;
+                transform-origin: right bottom !important;
+            }
+
+            #hero-card-products {
+                transform: scale(0.55) !important;
+                bottom: 10px !important;
+                left: 10% !important;
             }
         }
     </style>
@@ -333,16 +364,16 @@
 
                             <!-- GAMBAR: Business Woman -->
                             <img src="../Images/business woman.webp" alt="Business Owner" class="slide-image active-slide absolute 
-                                    bottom-0 xs:bottom-[-20] md:bottom-0
+                                    bottom-0 xs:bottom-[-50px] md:bottom-0
                                     left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 lg:right-10
-                                    w-auto h-[85%] xs:h-[85%] md:h-[650px]
-                                    scale-[1.1] xs:scale-[1] md:scale-[1] origin-bottom
+                                    w-auto h-[90%] xs:h-[85%] md:h-[650px]
+                                    scale-[1.2] xs:scale-[1.15] md:scale-[1] origin-bottom
                                     max-w-none object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.35)]">
 
                             <!-- Floating Stats Card -->
                             <!-- Gradient Mask to Hide Cut-off -->
-                            <div
-                                class="absolute -bottom-1 left-0 w-full h-40 bg-gradient-to-t from-[#ffffff] via-[#ffffff]/80 to-transparent z-10">
+                            <div id="hero-gradient"
+                                class="absolute -bottom-1 xs:-bottom-[65px] left-0 w-full h-36 xs:h-28 bg-gradient-to-t from-[#ffffff] via-[#ffffff]/90 to-transparent z-10">
                             </div>
 
                             <!-- 
@@ -351,8 +382,8 @@
                                 - Atur Jarak Kiri: Ubah angka di `md:-left-[53px]` (Makin besar minus = makin ke kiri)
                             -->
                             <!-- Card 1: Total Affiliator (Left Floating) -->
-                            <div
-                                class="absolute bottom-40 xs:bottom-[150px] md:bottom-[250px] -left-6 xs:left-0 md:-left-[120px] bg-white/90 backdrop-blur-md p-3 md:p-4 pr-5 md:pr-7 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform -rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.65] md:scale-[1.2] xs:origin-left">
+                            <div id="hero-card-affiliator"
+                                class="absolute bottom-40 xs:bottom-[210px] md:bottom-[250px] -left-6 xs:-left-[10px] md:-left-[120px] bg-white/90 backdrop-blur-md p-3 md:p-4 pr-5 md:pr-7 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform -rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.5] md:scale-[1.2] xs:origin-left">
                                 <div class="flex -space-x-2 md:-space-x-3">
                                     <div
                                         class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-sm overflow-hidden relative">
@@ -383,7 +414,8 @@
                             </div>
 
                             <!-- Card 2: Commission Paid (Right Floating) -->
-                            <div class="absolute bottom-24 xs:bottom-[90px] -right-2 xs:-right-4 md:-right-16 bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.65] md:scale-[1.2] xs:origin-right"
+                            <div id="hero-card-revenue"
+                                class="absolute bottom-24 xs:bottom-[150px] -right-2 xs:-right-[10px] md:-right-16 bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 animate-float z-20 flex items-center gap-3 transform rotate-3 hover:rotate-0 transition-transform cursor-default xs:scale-[0.5] md:scale-[1.2] xs:origin-right"
                                 style="animation-delay: 1.5s;">
                                 <div
                                     class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-xl md:text-2xl shadow-inner">
@@ -396,7 +428,8 @@
                             </div>
 
                             <!-- Card 3: Products Sold (Bottom Center Overlay) -->
-                            <div class="absolute bottom-8 xs:bottom-2 left-8 xs:left-[15%] md:left-24 bg-white/95 backdrop-blur-xl p-4 md:p-5 rounded-2xl shadow-[0_15px_35px_rgb(0,0,0,0.1)] border border-white/60 animate-float z-30 flex items-center gap-4 min-w-[180px] md:min-w-[220px] xs:scale-[0.75] md:scale-[1.15]"
+                            <div id="hero-card-products"
+                                class="absolute bottom-8 xs:bottom-4 left-8 xs:left-[15%] md:left-24 bg-white/95 backdrop-blur-xl p-4 md:p-5 rounded-2xl shadow-[0_15px_35px_rgb(0,0,0,0.1)] border border-white/60 animate-float z-30 flex items-center gap-4 min-w-[180px] md:min-w-[220px] xs:scale-[0.55] md:scale-[1.15]"
                                 style="animation-delay: 0.8s;">
                                 <div
                                     class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-500 text-white flex items-center justify-center text-xl md:text-2xl shadow-lg shadow-brand-500/30">
@@ -656,101 +689,266 @@
 
     <!-- 5. Logic Section: Steps -->
     <section id="how-it-works"
-        class="py-24 lg:py-32 bg-gradient-to-b from-white to-brand-50 relative overflow-hidden lg:[zoom:0.8]">
-        <!-- Abstract Background -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
-            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-200 blur-3xl"></div>
-            <div class="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-blue-100 blur-3xl"
-                style="animation-delay: 1s;"></div>
-        </div>
+        class="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden md:[zoom:0.94] lg:[zoom:0.86]">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 pattern-dot opacity-40 pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                <div data-animate="fade-up"
-                    class="inline-flex items-center px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-widest mb-4">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2"></span> Simple Process
-                </div>
-                <h2 data-animate="fade-up"
-                    class="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight leading-tight">
-                    Mulai Ekspansi dalam <br /> <span class="text-brand-500">4 Langkah Mudah:</span>
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16" data-animate="fade-up" data-aos-offset="0">
+                <span
+                    class="text-brand-500 font-bold tracking-wider uppercase text-xs md:text-sm bg-brand-50 px-4 py-1.5 rounded-full mb-6 inline-block border border-brand-100">
+                    🚀 Langkah Mudah
+                </span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+                    Mulai Ekspansi dalam <br class="hidden md:block">
+                    <span class="text-brand-500">5 Langkah Mudah:</span>
                 </h2>
             </div>
 
-            <div class="relative">
-                <!-- Connecting Line for Desktop -->
+            <!-- Steps Grid -->
+            <!-- Changed grid from lg:grid-cols-4 to lg:grid-cols-5 for 5 steps -->
+            <!-- Steps Container: Horizontal Scroll on Mobile, Grid on Desktop -->
+            <div
+                class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-8 pt-12 md:pb-0 md:pt-0 snap-x snap-mandatory scroll-smooth -mx-4 px-4 md:mx-0 md:px-0 relative no-scrollbar">
+
+                <!-- Connector Arrows (Desktop Only) -->
+                <!-- Arrow 1-2 (Left: ~18%) -->
                 <div
-                    class="hidden lg:block absolute top-12 left-[10%] w-[80%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200 border-t-2 border-dashed border-brand-300 z-0">
+                    class="hidden lg:block absolute top-1/2 left-[19%] ml-[-15px] z-20 text-brand-300 text-4xl animate-pulse -translate-y-1/2 font-bold drop-shadow-sm pointer-events-none">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+                <!-- Arrow 2-3 (Left: ~38%) -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[39%] ml-[-15px] z-20 text-brand-300 text-4xl animate-pulse -translate-y-1/2 font-bold drop-shadow-sm pointer-events-none">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+                <!-- Arrow 3-4 (Left: ~58%) -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[59%] ml-[-15px] z-20 text-brand-300 text-4xl animate-pulse -translate-y-1/2 font-bold drop-shadow-sm pointer-events-none">
+                    <i class="ph-bold ph-arrow-right"></i>
+                </div>
+                <!-- Arrow 4-5 (Left: ~78%) -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-[79%] ml-[-15px] z-20 text-brand-300 text-4xl animate-pulse -translate-y-1/2 font-bold drop-shadow-sm pointer-events-none">
+                    <i class="ph-bold ph-arrow-right"></i>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-                    <!-- Step 1 -->
-                    <div data-animate="fade-up" class="relative group">
-                        <div
-                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
-                            <div
-                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
-                                <i class="ph-bold ph-upload-simple"></i>
-                                <div
-                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
-                                    1</div>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 mb-3">Upload Produk</h4>
-                            <p class="text-gray-500 text-sm leading-relaxed">Masukkan info produk dan komisi yang Anda
-                                tawarkan.</p>
-                        </div>
+                <!-- Step 1: Upload Produk -->
+                <div class="w-[85%] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-5 md:p-6 rounded-3xl border border-gray-200 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-100/30 transition-all duration-300 h-full flex flex-col"
+                    data-animate="fade-up" data-aos-delay="0" data-aos-offset="0">
+                    <!-- Step Number Badge -->
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brand-500/40 group-hover:scale-110 transition-transform z-10">
+                        1
                     </div>
-
-                    <!-- Step 2 -->
-                    <div data-animate="fade-up" data-aos-delay="100" class="relative group">
-                        <div
-                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
-                            <div
-                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl -rotate-2 group-hover:-rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
-                                <i class="ph-bold ph-magic-wand"></i>
-                                <div
-                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
-                                    2</div>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 mb-3">AI Bekerja</h4>
-                            <p class="text-gray-500 text-sm leading-relaxed">Sistem membuatkan landing page & bahan
-                                promosi otomatis.</p>
+                    <div class="mt-4 flex-1 flex flex-col">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-upload-simple text-4xl text-brand-500 mb-3 block"></i>
+                            <h3 class="text-lg font-bold text-gray-900 h-14 flex items-center leading-tight">Upload
+                                Produk</h3>
                         </div>
-                    </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Masukkan <span class="font-semibold text-gray-800">info produk</span> dan komisi yang Anda
+                            tawarkan ke sistem.
+                        </p>
 
-                    <!-- Step 3 -->
-                    <div data-animate="fade-up" data-aos-delay="200" class="relative group">
-                        <div
-                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
+                        <!-- Visual: Upload Illustration -->
+                        <div class="mt-auto pt-6 relative">
                             <div
-                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
-                                <i class="ph-bold ph-megaphone"></i>
+                                class="bg-gray-50 rounded-xl border border-gray-200 p-3 relative overflow-hidden group-hover:bg-brand-50 transition-colors">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-brand-500 shadow-sm">
+                                        <i class="ph-fill ph-image text-lg"></i>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="h-1.5 bg-gray-200 rounded w-16"></div>
+                                        <div class="h-1 bg-gray-100 rounded w-10"></div>
+                                    </div>
+                                </div>
                                 <div
-                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
-                                    3</div>
+                                    class="w-full h-8 bg-white border border-dashed border-brand-300 rounded-lg flex items-center justify-center text-[10px] text-brand-600 font-bold hover:bg-brand-50 cursor-pointer transition-colors">
+                                    <i class="ph-bold ph-plus mr-1"></i> Tambah
+                                </div>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 mb-3">Affiliator Sebar</h4>
-                            <p class="text-gray-500 text-sm leading-relaxed">Produk dipromosikan oleh ribuan partner
-                                secara serentak.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div data-animate="fade-up" data-aos-delay="300" class="relative group">
-                        <div
-                            class="bg-white p-8 rounded-2xl border border-brand-200 hover:border-brand-500 shadow-sm hover:shadow-xl hover:shadow-brand-200/50 transition-all duration-300 h-full group-hover:-translate-y-2 relative z-10 text-center">
-                            <div
-                                class="w-20 h-20 mx-auto bg-brand-500 rounded-2xl -rotate-2 group-hover:-rotate-12 transition-transform duration-300 flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-lg shadow-brand-500/30">
-                                <i class="ph-bold ph-wallet"></i>
-                                <div
-                                    class="absolute -top-3 -right-3 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-brand-900 border-2 border-white">
-                                    4</div>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 mb-3">Cuan Otomatis</h4>
-                            <p class="text-gray-500 text-sm leading-relaxed">Pesanan masuk, Anda kirim barang, komisi
-                                terbagi otomatis.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 2: AI Bekerja -->
+                <div class="w-[85%] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-5 md:p-6 rounded-3xl border border-gray-200 hover:border-indigo-300 shadow-sm hover:shadow-2xl hover:shadow-indigo-100/30 transition-all duration-300 h-full flex flex-col"
+                    data-animate="fade-up" data-aos-delay="100" data-aos-offset="0">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/40 group-hover:scale-110 transition-transform z-10">
+                        2
+                    </div>
+                    <div class="mt-4 flex-1 flex flex-col">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-magic-wand text-4xl text-indigo-500 mb-3 block"></i>
+                            <h3 class="text-lg font-bold text-gray-900 h-14 flex items-center leading-tight">AI Bekerja
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Sistem <span class="font-semibold text-gray-800">AI Otomatis</span> membuatkan landing page
+                            & bahan promosi.
+                        </p>
+                        <!-- AI Visual -->
+                        <div class="mt-auto pt-2 relative">
+                            <div
+                                class="bg-indigo-50/50 rounded-xl border border-indigo-100 p-3 relative overflow-hidden group-hover:border-indigo-200 transition-colors">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="ph-fill ph-robot text-indigo-500 text-base animate-bounce"></i>
+                                    <span
+                                        class="text-[9px] uppercase font-bold text-indigo-900 tracking-wider">Processing...</span>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="h-1 bg-indigo-200 rounded-full w-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-indigo-500 rounded-full w-2/3 animate-[shimmer_1.5s_infinite_linear]">
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between text-[8px] text-indigo-400 font-medium">
+                                        <span>Landing Page</span>
+                                        <span class="text-indigo-600 font-bold">Generated!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Tampil di Katalog (NEW) -->
+                <div class="w-[85%] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-5 md:p-6 rounded-3xl border border-gray-200 hover:border-purple-300 shadow-sm hover:shadow-2xl hover:shadow-purple-100/30 transition-all duration-300 h-full flex flex-col"
+                    data-animate="fade-up" data-aos-delay="200" data-aos-offset="0">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-purple-500/40 group-hover:scale-110 transition-transform z-10">
+                        3
+                    </div>
+                    <div class="mt-4 flex-1 flex flex-col">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-storefront text-4xl text-purple-500 mb-3 block"></i>
+                            <h3 class="text-lg font-bold text-gray-900 h-14 flex items-center leading-tight">Tampil di
+                                Katalog</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Produk Anda <span class="font-semibold text-gray-800">ter-listing</span> di
+                            Marketplace untuk dilihat Affiliator.
+                        </p>
+                        <!-- Catalog Visual -->
+                        <div class="mt-auto pt-2 relative">
+                            <div
+                                class="bg-purple-50/50 rounded-xl border border-purple-100 p-3 relative overflow-hidden group-hover:border-purple-200 transition-colors">
+                                <!-- Mockup List Item 1 -->
+                                <div
+                                    class="flex items-center gap-2 mb-2 p-1.5 bg-white rounded-lg shadow-sm border border-purple-50">
+                                    <div class="w-6 h-6 bg-gray-200 rounded flex-shrink-0"></div>
+                                    <div class="flex-1 space-y-1">
+                                        <div class="h-1.5 bg-gray-800 rounded w-12"></div>
+                                        <div class="h-1 bg-green-500 rounded w-8"></div>
+                                    </div>
+                                    <i class="ph-bold ph-check-circle text-purple-500 text-xs"></i>
+                                </div>
+                                <!-- Mockup List Item 2 -->
+                                <div class="flex items-center gap-2 p-1.5 bg-white/60 rounded-lg">
+                                    <div class="w-6 h-6 bg-gray-100 rounded flex-shrink-0"></div>
+                                    <div class="flex-1 space-y-1">
+                                        <div class="h-1.5 bg-gray-300 rounded w-10"></div>
+                                        <div class="h-1 bg-gray-200 rounded w-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Affiliator Sebar (Old Step 3) -->
+                <div class="w-[85%] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-5 md:p-6 rounded-3xl border border-gray-200 hover:border-pink-300 shadow-sm hover:shadow-2xl hover:shadow-pink-100/30 transition-all duration-300 h-full flex flex-col"
+                    data-animate="fade-up" data-aos-delay="300" data-aos-offset="0">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-pink-500/40 group-hover:scale-110 transition-transform z-10">
+                        4
+                    </div>
+                    <div class="mt-4 flex-1 flex flex-col">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-megaphone text-4xl text-pink-500 mb-3 block"></i>
+                            <h3 class="text-lg font-bold text-gray-900 h-14 flex items-center leading-tight">Affiliator
+                                Sebar</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Produk dipromosikan oleh <span class="font-semibold text-gray-800">Ribuan Partner</span>
+                            secara serentak.
+                        </p>
+
+                        <!-- Visual: Social Share -->
+                        <div class="mt-auto pt-4 relative">
+                            <div class="flex flex-wrap gap-2 justify-start">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-gradient-to-tr from-yellow-400 to-pink-500 flex items-center justify-center text-white shadow-sm hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-instagram-logo text-sm"></i>
+                                </div>
+                                <div
+                                    class="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white shadow-sm hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-tiktok-logo text-sm"></i>
+                                </div>
+                                <div
+                                    class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center text-white shadow-sm hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-whatsapp-logo text-sm"></i>
+                                </div>
+                                <div
+                                    class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-sm hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-facebook-logo text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Cuan Otomatis (Old Step 4) -->
+                <div class="w-[85%] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-5 md:p-6 rounded-3xl border-2 border-green-200 hover:border-green-400 shadow-sm hover:shadow-2xl hover:shadow-green-100/30 transition-all duration-300 h-full flex flex-col"
+                    data-animate="fade-up" data-aos-delay="400" data-aos-offset="0">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-green-500/40 group-hover:scale-110 transition-transform z-10">
+                        5
+                    </div>
+                    <div class="mt-4 flex-1 flex flex-col">
+                        <div class="mb-4">
+                            <i class="ph-duotone ph-wallet text-4xl text-green-500 mb-3 block"></i>
+                            <h3 class="text-lg font-bold text-gray-900 h-14 flex items-center leading-tight">Cuan
+                                Otomatis</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Pesanan masuk, <br>Anda kirim, <span class="text-green-600 font-bold">Profit Net</span>
+                            cair!
+                        </p>
+
+                        <!-- Commission Visuals -->
+                        <div class="mt-auto space-y-2 relative">
+                            <div
+                                class="p-2 bg-white rounded-xl border border-green-100 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+                                <div
+                                    class="w-6 h-6 bg-green-50 rounded-full flex items-center justify-center text-green-600 text-sm flex-shrink-0">
+                                    <i class="ph-fill ph-trend-up"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-0.5">
+                                        <p class="text-[8px] text-gray-500 font-semibold uppercase tracking-wider">New
+                                            Order</p>
+                                    </div>
+                                    <p class="text-xs font-bold text-gray-900">ID #29384</p>
+                                </div>
+                            </div>
+                            <!-- Balance Visual -->
+                            <div class="p-2 bg-green-50 rounded-xl border border-green-200 flex items-center gap-2">
+                                <div class="flex-1">
+                                    <p class="text-[8px] text-green-600 font-bold">Total Sales</p>
+                                    <p class="text-xs font-black text-green-700">Rp 15.4jt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
