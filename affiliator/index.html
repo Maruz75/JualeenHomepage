@@ -562,7 +562,9 @@
             </div>
 
             <!-- Steps Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
+            <!-- Use Grid with grid-flow-col for equal height horizontal scrolling on mobile -->
+            <div
+                class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[350px] md:grid-flow-row md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto gap-4 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible pb-8 pt-4 md:pb-0 md:pt-0 snap-x snap-mandatory scroll-smooth -mx-4 px-4 md:mx-0 md:px-0 relative no-scrollbar">
 
                 <!-- Connector Arrows (Desktop Only) -->
                 <!-- Arrow 1-2 -->
@@ -582,7 +584,7 @@
                 </div>
 
                 <!-- Step 1 -->
-                <div class="group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-100/30 transition-all duration-300 h-full flex flex-col"
+                <div class="snap-center group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-brand-300 shadow-sm hover:shadow-2xl hover:shadow-brand-100/30 transition-all duration-300 h-full flex flex-col"
                     data-animate="fade-up" data-aos-delay="0" data-aos-offset="0">
                     <!-- Step Number Badge -->
                     <div
@@ -677,7 +679,7 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-yellow-300 shadow-sm hover:shadow-2xl hover:shadow-yellow-100/30 transition-all duration-300 h-full flex flex-col"
+                <div class="snap-center group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-yellow-300 shadow-sm hover:shadow-2xl hover:shadow-yellow-100/30 transition-all duration-300 h-full flex flex-col"
                     data-animate="fade-up" data-aos-delay="100" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-yellow-500/40 group-hover:scale-110 transition-transform z-10">
@@ -719,7 +721,7 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-2xl hover:shadow-blue-100/30 transition-all duration-300 h-full flex flex-col"
+                <div class="snap-center group relative bg-white p-6 md:p-7 xl:p-9 rounded-3xl border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-2xl hover:shadow-blue-100/30 transition-all duration-300 h-full flex flex-col"
                     data-animate="fade-up" data-aos-delay="200" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/40 group-hover:scale-110 transition-transform z-10">
@@ -767,7 +769,7 @@
                 </div>
 
                 <!-- Step 4 -->
-                <div class="group relative bg-gradient-to-br from-green-50 to-white p-6 md:p-7 xl:p-9 rounded-3xl border-2 border-green-200 hover:border-green-400 shadow-sm hover:shadow-2xl hover:shadow-green-100/30 transition-all duration-300 h-full flex flex-col"
+                <div class="snap-center group relative bg-gradient-to-br from-green-50 to-white p-6 md:p-7 xl:p-9 rounded-3xl border-2 border-green-200 hover:border-green-400 shadow-sm hover:shadow-2xl hover:shadow-green-100/30 transition-all duration-300 h-full flex flex-col"
                     data-animate="fade-up" data-aos-delay="300" data-aos-offset="0">
                     <div
                         class="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-green-500/40 group-hover:scale-110 transition-transform z-10">
@@ -886,9 +888,10 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+            <div
+                class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[380px] md:grid-flow-row md:grid-cols-2 md:auto-cols-auto gap-4 md:gap-12 overflow-x-auto md:overflow-visible pb-8 pt-4 md:pb-0 md:pt-0 snap-x snap-mandatory scroll-smooth -mx-4 px-4 md:mx-auto md:px-0 max-w-6xl relative no-scrollbar">
                 <!-- Old Way Card -->
-                <div class="bg-white p-8 md:p-10 rounded-3xl border border-red-200 shadow-sm relative overflow-hidden group transition-colors"
+                <div class="snap-center h-full bg-white p-8 md:p-10 rounded-3xl border border-red-200 shadow-sm relative overflow-hidden group transition-colors"
                     data-animate="fade-right" data-aos-offset="0">
                     <div class="absolute top-0 left-0 w-full h-2 bg-red-200 transition-colors">
                     </div>
@@ -925,7 +928,7 @@
                 </div>
 
                 <!-- Jualeen Way Card -->
-                <div class="bg-white p-8 md:p-10 rounded-3xl border-2 border-brand-500 shadow-xl shadow-brand-500/10 relative overflow-hidden transform md:-translate-y-4"
+                <div class="snap-center h-full bg-white p-8 md:p-10 rounded-3xl border-2 border-brand-500 shadow-xl shadow-brand-500/10 relative overflow-hidden transform md:-translate-y-4"
                     data-animate="fade-left" data-aos-offset="0">
                     <div
                         class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
