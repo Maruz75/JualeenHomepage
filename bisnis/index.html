@@ -529,10 +529,10 @@
                                 <!-- 2. Typing User Bubble Animation -->
                                 <div class="mt-auto self-end max-w-[95%]">
                                     <div
-                                        class="bg-indigo-500 rounded-tl-xl rounded-tr-xl rounded-bl-xl p-2 shadow-sm animate-[fadeIn_0.5s_ease-out_1s_forwards] opacity-0 flex items-center min-w-[30px]">
+                                        class="bg-indigo-500 rounded-tl-xl rounded-tr-xl rounded-bl-xl p-2 shadow-sm animate-[userBubbleLoop_8s_infinite] opacity-0 flex items-center min-w-[30px]">
                                         <!-- Typing Text -->
                                         <p
-                                            class="text-[7px] text-white leading-tight font-medium overflow-hidden whitespace-nowrap animate-[typingText_2.5s_steps(40)_1.5s_forwards] w-0 border-r border-transparent">
+                                            class="text-[7px] text-white leading-tight font-medium overflow-hidden whitespace-nowrap animate-[typingLoop_8s_steps(40)_infinite] w-0 border-r border-transparent">
                                             Buatkan landing page untuk produk...</p>
                                     </div>
                                 </div>
@@ -542,7 +542,7 @@
                             <div class="w-2/3 bg-white p-3 relative flex items-center justify-center">
                                 <!-- Loading State -->
                                 <div
-                                    class="absolute inset-0 flex flex-col items-center justify-center bg-white z-20 animate-[fadeOut_0.3s_ease-out_4.5s_forwards] pointer-events-none text-center px-4">
+                                    class="absolute inset-0 flex flex-col items-center justify-center bg-white z-20 animate-[loadingLoop_8s_infinite] pointer-events-none text-center px-4">
                                     <div class="relative mb-2">
                                         <i class="ph-bold ph-spinner text-indigo-500 text-2xl animate-spin"></i>
                                         <i
@@ -554,7 +554,7 @@
 
                                 <!-- Result Content (Pop Up Animation) -->
                                 <div
-                                    class="w-full h-full border border-gray-100 rounded-lg shadow-sm p-0 overflow-hidden opacity-0 animate-[popIn_0.5s_cubic-bezier(0.34,1.56,0.64,1)_4.8s_forwards] flex flex-col origin-center transform scale-90">
+                                    class="w-full h-full border border-gray-100 rounded-lg shadow-sm p-0 overflow-hidden opacity-0 animate-[resultLoop_8s_infinite] flex flex-col origin-center transform scale-90">
                                     <!-- Mini Navbar -->
                                     <div
                                         class="w-full h-4 bg-white border-b border-gray-100 flex items-center px-2 justify-between">
@@ -591,49 +591,88 @@
                             </div>
 
                             <style>
-                                @keyframes typingText {
-                                    from {
-                                        width: 0;
-                                        border-right-color: white;
-                                    }
+                                @keyframes userBubbleLoop {
 
-                                    to {
-                                        width: 100%;
-                                        border-right-color: transparent;
-                                    }
-                                }
-
-                                @keyframes fadeIn {
-                                    from {
+                                    0%,
+                                    10% {
                                         opacity: 0;
                                         transform: translateY(5px);
                                     }
 
-                                    to {
+                                    15%,
+                                    85% {
                                         opacity: 1;
                                         transform: translateY(0);
                                     }
+
+                                    95%,
+                                    100% {
+                                        opacity: 0;
+                                        transform: translateY(5px);
+                                    }
                                 }
 
-                                @keyframes fadeOut {
-                                    from {
+                                @keyframes typingLoop {
+
+                                    0%,
+                                    15% {
+                                        width: 0;
+                                        border-right-color: white;
+                                    }
+
+                                    45% {
+                                        width: 100%;
+                                        border-right-color: transparent;
+                                    }
+
+                                    85% {
+                                        width: 100%;
+                                        border-right-color: transparent;
+                                    }
+
+                                    95%,
+                                    100% {
+                                        width: 0;
+                                        border-right-color: white;
+                                    }
+                                }
+
+                                @keyframes loadingLoop {
+
+                                    0%,
+                                    50% {
                                         opacity: 1;
                                     }
 
-                                    to {
+                                    55%,
+                                    90% {
                                         opacity: 0;
+                                    }
+
+                                    95%,
+                                    100% {
+                                        opacity: 1;
                                     }
                                 }
 
-                                @keyframes popIn {
-                                    from {
+                                @keyframes resultLoop {
+
+                                    0%,
+                                    55% {
                                         opacity: 0;
                                         transform: scale(0.9);
                                     }
 
-                                    to {
+                                    60%,
+                                    90% {
                                         opacity: 1;
                                         transform: scale(1);
+                                    }
+
+                                    95%,
+                                    100% {
+                                        opacity: 0;
+                                        transform: scale(0.9);
                                     }
                                 }
                             </style>
